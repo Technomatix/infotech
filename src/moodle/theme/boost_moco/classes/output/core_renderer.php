@@ -417,7 +417,7 @@ class core_renderer extends \theme_boost\output\core_renderer
      */
     public function footerContent()
     {
-        return 'Copyright © '.date('Y').' Technomatix Ltd. | All Rights Reserved';
+        return 'Copyright © '.date('Y').' Державне підприємство "ІНФОТЕХ"';
     }
 
     /**

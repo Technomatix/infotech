@@ -87,8 +87,6 @@ use usr\models\entities\User;
         <div class="edit-data col-md-12 col-lg-12 col-sm-12 col-xs-12 no-padding"><?php echo Yii::t('orgModule.default', '{DBE00150-12AC-413F-85FB-06D1E5608897}'); ?>:</div>    
         <div class="edit-data col-md-12 col-lg-12 col-sm-12 col-xs-12 no-padding"><?php echo Yii::t('orgModule.default', '{E8E265DF-F6D8-4D9B-9914-89A3EB88C585}'); ?>:</div>
         <div class="edit-data col-md-12 col-lg-12 col-sm-12 col-xs-12 no-padding"><?php echo Yii::t('orgModule.default', '{94BB051D-333B-4C0E-B908-B7E4BF19F44D}'); ?>:</div>
-        <div class="edit-data col-md-12 col-lg-12 col-sm-12 col-xs-12 no-padding"><?php echo Yii::t('orgModule.ViewsPersonProfileHeader', '{555A80B2-585C-4390-84CF-31BD5B51CEDA}'); ?>:</div>
-        <div class="edit-data col-md-12 col-lg-12 col-sm-12 col-xs-12 no-padding"><?php echo Yii::t('orgModule.ViewsPersonProfileHeader', '{178F7DF1-B85F-403C-93B9-72EB20A31D9A}'); ?>:</div>
         <?php if (!is_null($person->getSalaryincrement())): ?>
             <div class="edit-data col-md-12 col-lg-12 col-sm-12 col-xs-12 no-padding"><?php echo Yii::t('orgModule.default', '{FFBFC739-04A4-4BD5-A9EA-69130E5C4BBD}'); ?>:</div>
         <?php endif; ?>
@@ -103,19 +101,6 @@ use usr\models\entities\User;
         <div id="personTaxNumber" class="edit-data col-md-12 col-lg-12 col-sm-12 col-xs-12 no-padding"><?php echo $person->getTaxNumber() !== '' ? $person->getTaxNumber() : '-'; ?></div>
         <div id="personPositionName" class="dot edit-data col-md-12 col-lg-12 col-sm-12 col-xs-12 no-padding"><?php echo TbHtml::tag("div", array(), TbHtml::link($person->getPositionName(), Yii::app()->getController()->createUrl("/org/jobTitle/details/id/".TbHtml::encode($person->getPositionId())), array("class" => "template-view")));?></div>
         <div id="personDepartmentFullName" class="dot edit-data col-md-12 col-lg-12 col-sm-12 col-xs-12 no-padding"><?php echo TbHtml::tag("div", array(), TbHtml::link($person->getDepartmentFullName(), Yii::app()->getController()->createUrl("/org/division/details/id/".TbHtml::encode($person->getDepartmentId())), array("class" => "template-view")));?></div>
-        <div id="regDays" class="edit-data col-md-12 col-lg-12 col-sm-12 col-xs-12 no-padding">
-        <?= ($person->getHireDate()) ? \moco\ui\Formatting::diffDatesStringFormatYmd(new DateTime("now"), $person->getHireDate()) . ' ' .\moco\ui\Formatting::showDatesRange($person->getHireDate(), $person->getFireDate()) : '-' ?>
-        </div>
-        <div id="primaryDays" class="edit-data col-md-12 col-lg-12 col-sm-12 col-xs-12 no-padding">
-        <?= ($person->getPrimaryPosition() && $person->getPrimaryPosition()->getEntryDate())
-            ?
-            \moco\ui\Formatting::diffDatesStringFormatYmd(new DateTime("now"), $person->getPrimaryPosition()->getEntryDate()) .
-            ' ' .
-            \moco\ui\Formatting::showDatesRange($person->getPrimaryPosition()->getEntryDate(), $person->getPrimaryPosition()->getExitDate())
-            :
-            '-'
-        ?>
-        </div>
         <?php if (!is_null($person->getSalaryincrement())): ?>
             <div class="edit-data col-md-12 col-lg-12 col-sm-12 col-xs-12 no-padding"><?= $person->getSalaryincrementRound() ?></div>
         <?php endif; ?>

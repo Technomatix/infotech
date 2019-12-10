@@ -451,7 +451,7 @@ if (isset(Yii::app()->user->userId)) {
   <div class="row no-margin"></div>
   <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 no-padding" id="footer">
     <div class="text-center">
-        <?php echo Yii::t('main', 'Copyright © ' . date('Y') . ' Technomatix Ltd. | All Rights Reserved'); ?>
+        <?php echo Yii::t('main', 'Copyright © ' . date('Y') . ' Державне підприємство "ІНФОТЕХ"'); ?>
     </div>
   </div><!-- footer -->
 <?php }

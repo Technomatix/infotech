@@ -10,7 +10,7 @@ paths:
   /login:
     post:
       tags:
-      - Auth
+        - Auth
       summary: Аутентификация
       description: Аутентификация клиентского приложения по логину, паролю и идентификатору приложения
       operationId: login
@@ -34,7 +34,7 @@ paths:
   /org/structures:
     get:
       tags:
-      - OrgChart
+        - OrgChart
       summary: 'Получение полного списка организационных структур'
       description: 'Получение полного плоского списка организационных струтур. Структура -- это объект, предствляющий собой организацию. Пример: университет, институт. В древовидной иерарархии подразделений Структура предствляет собой объект самого верхнего уровня. В выборку попадают неудаленные структуры и структуры, удаленные не ранее 30 дней до момента запроса'
       operationId: getAllStructures
@@ -54,7 +54,7 @@ paths:
   /org/faculties:
     get:
       tags:
-      - OrgChart
+        - OrgChart
       summary: 'Получение полного списка факультетов'
       description: 'Получение полного плоского списка факультетов. В древовидной иерарархии подразделений Факультет предствляет собой объект второго уровня. В выборку попадают неудаленные факультеты и факультеты, удаленные не ранее 30 дней до момента запроса.'
       operationId: getAllFaculties
@@ -74,7 +74,7 @@ paths:
   /org/chairs:
     get:
       tags:
-      - OrgChart
+        - OrgChart
       summary: 'Получение полного списка кафедр'
       description: 'Получение полного плоского списка кафедр. В древовидной иерарархии подразделений Кафедра предствляет собой объект третьего уровня. В выборку попадают неудаленные кафедры и кафедры, удаленные не ранее 30 дней до момента запроса.'
       operationId: getAllChairs
@@ -94,7 +94,7 @@ paths:
   /org/jobtitles:
     get:
       tags:
-      - OrgChart
+        - OrgChart
       summary: 'Получение полного списка должностей'
       description: 'Получение полного плоского списка должностей. В выборку попадают неудаленные должности и должности, удаленные не ранее 30 дней до момента запроса.'
       operationId: getAllJobTitles
@@ -114,7 +114,7 @@ paths:
   /org/specialities:
     post:
       tags:
-      - OrgChart
+        - OrgChart
       summary: 'Постраничное получение полного списка специальностей'
       description: 'Постраничное получение полного плоского списка специальностей. В выборку попадают неудаленные специальности и специальности, удаленные не ранее 30 дней до момента запроса.'
       operationId: getAllSpecialities
@@ -142,7 +142,7 @@ paths:
   /org/specializations:
     post:
       tags:
-      - OrgChart
+        - OrgChart
       summary: 'Постраничное получение полного списка специализаций'
       description: 'Постраничное получение полного плоского списка специализаций. В выборку попадают неудаленные специализации и специализации, удаленные не ранее 30 дней до момента запроса.'
       operationId: getAllSpecializations
@@ -170,7 +170,7 @@ paths:
   /org/groups:
     post:
       tags:
-      - OrgChart
+        - OrgChart
       summary: 'Постраничное получение полного списка групп студентов'
       description: 'Постраничное получение полного плоского списка групп студентов. В выборку попадают неудаленные группы и группы, удаленные не ранее 30 дней до момента запроса.'
       operationId: getAllGroups
@@ -198,7 +198,7 @@ paths:
   /org/employees:
     post:
       tags:
-      - OrgChart
+        - OrgChart
       summary: 'Постраничное получение полного списка сотрудников (в том числе преподавателей)'
       description: 'Постраничное получение полного списка сотрудников (в том числе преподавателей). В выборку попадают неуволенные сотрудники и сотрудники, уволенные не ранее 30 дней до момента запроса.'
       operationId: getAllEmployees
@@ -226,7 +226,7 @@ paths:
   /org/students:
     post:
       tags:
-      - OrgChart
+        - OrgChart
       summary: 'Постраничное получение полного списка студентов'
       description: 'Постраничное получение полного списка студентов. В выборку попадают зачисленные студенты и студенты, отчисленные не ранее 30 дней до момента запроса.'
       operationId: getAllStudents
@@ -254,7 +254,7 @@ paths:
   /org/classrooms:
     post:
       tags:
-      - OrgChart
+        - OrgChart
       summary: 'Постраничное получение полного списка учебных аудиторий'
       description: 'Постраничное получение полного списка учебных аудиторий. В выборку попадают неудаленные аудитории и аудитории, удаленные не ранее 30 дней до момента запроса.'
       operationId: getAllClassrooms
@@ -279,22 +279,50 @@ paths:
           $ref: '#/components/responses/403'
         422:
           $ref: '#/components/responses/422'
-  /org/disciplines:
+  /edu/disciplines:
     post:
       tags:
-      - Academic
-      summary: 'Постраничное получение полного списка дисциплин обучения'
-      description: 'Постраничное получение полного списка дисциплин обучения. В выборку попадают неудаленные дисциплины и дисциплины, удаленные не ранее 30 дней до момента запроса.'
+        - Academic
+      summary: 'Получение полного списка идентификаторов активных дисциплин обучения'
+      description: 'Получение полного списка идентификаторов дисциплин обучения, используемых в заданном учебном году и его полугодии (семестре)'
       operationId: getAllDisciplines
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DataPageQuery'
+              $ref: '#/components/schemas/DisciplineIdsQuery'
       responses:
         200:
-          description: 'Список дисциплин обучения'
+          description: 'Список идентификаторов активных дисциплин обучения'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DisciplineIds'
+        401:
+          $ref: '#/components/responses/401'
+        403:
+          $ref: '#/components/responses/403'
+        422:
+          $ref: '#/components/responses/422'
+  /edu/discipline:
+    post:
+      tags:
+        - Academic
+      summary: 'Постраничное получение полного списка дисциплин обучения'
+      description: 'Постраничное получение полного списка дисциплин обучения. В выборку попадают неудаленные дисциплины и дисциплины, удаленные не ранее 30 дней до момента запроса.'
+      operationId: getDisciplinesDetails
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DisciplineQuery'
+      responses:
+        200:
+          description: 'Список дисциплин обучения с информацией об учебных планах и нагрузке преподавателей.'
           content:
             application/json:
               schema:
@@ -310,7 +338,7 @@ paths:
   /time-table/student:
     post:
       tags:
-      - TimeTable
+        - TimeTable
       summary: 'Расписание студента'
       description: 'Расписание студента'
       operationId: getTimeTableStudent
@@ -335,10 +363,38 @@ paths:
           $ref: '#/components/responses/403'
         422:
           $ref: '#/components/responses/422'
+  /time-table/group:
+    post:
+      tags:
+        - TimeTable
+      summary: 'Расписание группы студентов'
+      description: 'Расписание группы студентов'
+      operationId: getTimeTableGroup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupTimeTableForm'
+      responses:
+        200:
+          description: Расписание
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TimeTableDate'
+        401:
+          $ref: '#/components/responses/401'
+        403:
+          $ref: '#/components/responses/403'
+        422:
+          $ref: '#/components/responses/422'
   /time-table/teacher:
     post:
       tags:
-      - TimeTable
+        - TimeTable
       summary: 'Расписание преподователя'
       description: 'Расписание преподователя'
       operationId: getTimeTableTeacher
@@ -394,9 +450,9 @@ components:
     LoginForm:
       description: 'Схема запроса логина'
       required:
-      - username
-      - password
-      - app_key
+        - username
+        - password
+        - app_key
       properties:
         username:
           description: username
@@ -418,7 +474,7 @@ components:
     DataPageQuery:
       description: 'Запрос страницы данных, начиная с записи, идентификатор которой является следующим в БД МКР за переданным в данном запросе. Используется для реализации постраничного запроса и получения данных при выборке всех данных справочника.'
       required:
-      - pageSize
+        - pageSize
       properties:
         lastRecordId:
           description: 'Идентификатор записи, относительно которой должна быть получена следующая за ней запись. Данная полученная запись будет первой в списке записей, возвращаемых в ответ на данный запрос. При запросе первой страницы справочника не передается.'
@@ -430,8 +486,8 @@ components:
     Structure:
       description: 'Схема Структуры (подразделения верхнего уровня в иерархии подразделений)'
       required:
-      - guid
-      - fullName
+        - guid
+        - fullName
       properties:
         guid:
           description: 'Глобальный уникальный неизменнный идентификатор Структуры. Позволяет Мосо объединить в одном справочнике подразделения разных типов из МКР (Структуры, Факультеты, Кафедры)'
@@ -454,9 +510,9 @@ components:
     Faculty:
       description: 'Схема Факультета (подразделения второго уровня в иерархии подразделений)'
       required:
-      - guid
-      - fullName
-      - structureGuid
+        - guid
+        - fullName
+        - structureGuid
       properties:
         guid:
           description: 'Глобальный уникальный неизменнный идентификатор Факультета. Позволяет Мосо объединить в одном справочнике подразделения разных типов из МКР (Структуры, Факультеты, Кафедры)'
@@ -482,9 +538,9 @@ components:
     Chair:
       description: 'Схема Кафедры (подразделения третьего уровня в иерархии подразделений)'
       required:
-      - guid
-      - fullName
-      - facultyGuid
+        - guid
+        - fullName
+        - facultyGuid
       properties:
         guid:
           description: 'Глобальный уникальный неизменнный идентификатор Кафедры. Позволяет Мосо объединить в одном справочнике подразделения разных типов из МКР (Структуры, Факультеты, Кафедры)'
@@ -510,8 +566,8 @@ components:
     JobTitle:
       description: 'Схема Должности сотрудника'
       required:
-      - id
-      - title
+        - id
+        - title
       properties:
         id:
           description: 'Уникальный неизменнный идентификатор Должности'
@@ -527,9 +583,9 @@ components:
     Speciality:
       description: 'Схема Специальности'
       required:
-      - id
-      - name
-      - code
+        - id
+        - name
+        - code
       properties:
         id:
           description: 'Уникальный неизменный идентификатор специальности'
@@ -554,9 +610,9 @@ components:
     Specialization:
       description: 'Схема Специализации'
       required:
-      - id
-      - name
-      - code
+        - id
+        - name
+        - code
       properties:
         id:
           description: 'Уникальный неизменный идентификатор специализации'
@@ -578,9 +634,9 @@ components:
     Group:
       description: 'Схема группы студентов'
       required:
-      - id
-      - name
-      - specialityId
+        - id
+        - name
+        - specialityId
       properties:
         id:
           description: 'Уникальный неизменный идентификатор группы'
@@ -608,14 +664,18 @@ components:
     Person:
       description: 'Схема Персоны. Персона является базовой сущностью для Сотрудника и Студента.'
       required:
-      - id
-      - firstName
-      - lastName
-      - divisionGuid
+        - id
+        - globalId
+        - firstName
+        - lastName
+        - divisionGuid
       properties:
         id:
           description: 'Уникальный неизменяемый идентификатор персоны'
           type: integer
+        globalId:
+          description: 'Глобальный уникальный неизменяемый идентификатор персоны, формируемый, как хеш-функция от ее индивидуального налогового номера'
+          type: string
         firstName:
           description: 'Имя'
           type: string
@@ -650,8 +710,8 @@ components:
     Chief:
       description: 'Схема Руководителя Персоны.'
       required:
-      - chiefType
-      - chiefId
+        - chiefType
+        - chiefId
       properties:
         chiefType:
           description: 'Тип руководителя ::= administrative_chief | functional_chief | ...'
@@ -663,79 +723,79 @@ components:
     Employee:
       description: 'Схема Сотрудника ВУЗа (чаще всего преподавателя)'
       required:
-      - hireDate
-      - jobTitle
+        - hireDate
+        - jobTitle
       allOf:
-      -
-        $ref: '#/components/schemas/Person'
-      -
-        properties:
-          personnelNumber:
-            description: 'Табельный номер сотрудника'
-            type: string
-          hireDate:
-            description: 'Дата приема на основную позицию'
-            type: string
-            format: date-time
-          fireDate:
-            description: 'Дата увольнения с основной позиции'
-            type: string
-            format: date-time
-          jobTitle:
-            description: 'Идентификатор должности сотрудника'
-            type: integer
-        type: object
+        -
+          $ref: '#/components/schemas/Person'
+        -
+          properties:
+            personnelNumber:
+              description: 'Табельный номер сотрудника'
+              type: string
+            hireDate:
+              description: 'Дата приема на основную позицию'
+              type: string
+              format: date-time
+            fireDate:
+              description: 'Дата увольнения с основной позиции'
+              type: string
+              format: date-time
+            jobTitle:
+              description: 'Идентификатор должности сотрудника'
+              type: integer
+          type: object
     Student:
       description: 'Схема Студента'
       required:
-      - studentNumber
-      - hireDate
+        - studentNumber
+        - hireDate
       allOf:
-      -
-        $ref: '#/components/schemas/Person'
-      -
-        properties:
-          studentNumber:
-            description: 'Учетный номер сотрудника'
-            type: string
-          groupId:
-            description: 'Идентификатор группы, в которую входит студентв'
-            type: integer
-          status:
-            description: 'Статус студента в МКР ::= ???'
-            type: string
-          isContract:
-            description: 'Является контрактным студентом'
-            type: integer
-          course:
-            description: 'Номер курса, на котором находится студент (от 1 до 6)'
-            type: integer
-          educationForm:
-            description: 'Форма обучения ::= fulltime | parttime | extramural'
-            type: string
-          gradeLevel:
-            description: 'Уровень получаемого студентом образования ::= bachelor | master'
-            type: string
-          specialityId:
-            description: 'Идентификатор специальности студента'
-            type: integer
-          specializationId:
-            description: 'Идентификатор специализации студента'
-            type: integer
-          entryDate:
-            description: 'Дата зачисления'
-            type: string
-            format: date-time
-          closeDate:
-            description: 'Дата завершения обучения студента'
-            type: string
-            format: date-time
-        type: object
+        -
+          $ref: '#/components/schemas/Person'
+        -
+          properties:
+            studentNumber:
+              description: 'Учетный номер сотрудника'
+              type: string
+            groupId:
+              description: 'Идентификатор группы, в которую входит студентв'
+              type: integer
+            status:
+              description: 'Статус студента в МКР ::= ???'
+              type: string
+            isContract:
+              description: 'Является контрактным студентом'
+              type: integer
+            course:
+              description: 'Номер курса, на котором находится студент (от 1 до 6)'
+              type: integer
+            educationForm:
+              description: 'Форма обучения ::= fulltime | parttime | extramural'
+              type: string
+            gradeLevel:
+              description: 'Уровень получаемого студентом образования ::= bachelor | master'
+              type: string
+            specialityId:
+              description: 'Идентификатор специальности студента'
+              type: integer
+            specializationId:
+              description: 'Идентификатор специализации студента'
+              type: integer
+            entryDate:
+              description: 'Дата зачисления'
+              type: string
+              format: date-time
+            closeDate:
+              description: 'Дата завершения обучения студента'
+              type: string
+              format: date-time
+          type: object
     Classroom:
       description: 'Схема учебной аудитории'
       required:
-      - id
-      - name
+        - id
+        - name
       properties:
         id:
           description: 'Уникальный неизменный идентификатор аудитории'
@@ -754,12 +814,55 @@ components:
           type: string
           format: date-time
       type: object
+    DisciplineIdsQuery:
+      description: 'Запрос списка идентификаторов активных дисцлиплины для заданного учебного года и его семестра.'
+      required:
+        - academicYear
+        - semester
+      properties:
+        academicYear:
+          description: 'Календарной год, в котором начался учебный год. Например, для учебного года 2019/2020 должно передаваться значение 2019.'
+          type: integer
+        semester:
+          description: 'Номер семестра (полугодия) внутри учебного года: 0 - осень, 1 - весна.'
+          type: integer
+      type: object
+    DisciplineIds:
+      description: 'Схема списка идентификаторов дисциплин'
+      required:
+        - disciplineIds
+      properties:
+        disciplineIds:
+          description: 'Список идентификаторов дисциплин'
+          type: array
+          items:
+            type: integer
+      type: object
+    DisciplineQuery:
+      description: 'Запрос подробной информации по перечисленным дисциплинам в рамках заданного учебного года и его семестра.'
+      required:
+        - disciplineIds
+        - academicYear
+        - semester
+      properties:
+        disciplineIds:
+          description: 'Список идентификаторов запрашиваемых дисциплин'
+          type: array
+          items:
+            type: integer
+        academicYear:
+          description: 'Календарной год, в котором начался учебный год. Например, для учебного года 2019/2020 должно передаваться значение 2019.'
+          type: integer
+        semester:
+          description: 'Номер семестра (полугодия) внутри учебного года: 0 - осень, 1 - весна.'
+          type: integer
+      type: object
     Discipline:
       description: 'Схема дисциплины обучения'
       required:
-      - id
-      - title
-      - shortTitle
+        - id
+        - title
+        - shortTitle
       properties:
         id:
           description: 'Уникальный неизменный идентификатор дисципины'
@@ -770,6 +873,15 @@ components:
         shortTitle:
           description: 'Сокращенное название дисциплины'
           type: string
+        specialityId:
+          description: '???? Идентификатор специальности, к которой относится дисциплина. В том числе используется Мосо для привязки дисциплины к категории.'
+          type: integer
+        semesterOfYear:
+          description: 'Номер семестра, в котором происходит обучение дисциплине. Значение от 1 до 12.'
+          type: integer
+        course:
+          description: 'Номер курса, на котором происходит обучение дисциплине (от 1 до 6)'
+          type: integer
         learningPlans:
           description: 'Список Учебных планов, в которые входит данная Дисциплине'
           type: array
@@ -792,8 +904,8 @@ components:
     LearningPlan:
       description: 'Учебный план, отражающий назначение Группы на Дисциплину'
       required:
-      - id
-      - gropuId
+        - id
+        - gropuId
       properties:
         id:
           description: 'Уникальный неизменный идентификатор Учебного плана'
@@ -804,17 +916,8 @@ components:
         chairId:
           description: 'Идентификатор кафедры, которая проводит обучение по данной дисциплине (Использование в Мосо еще не определено)'
           type: integer
-        specialityId:
-          description: 'Идентификатор специальности, к которой относится дисциплина в рамках Учебного плана.'
-          type: integer
-        semesterOfYear:
-          description: 'Номер семестра, в котором происходит обучение дисциплине в рамках Учебного плана. Значение от 1 до 12.'
-          type: integer
-        course:
-          description: 'Номер курса, на котором происходит обучение дисциплине (от 1 до 6) в рамках Учебного плана.'
-          type: integer
         academicLoads:
-          description: 'Нагрузка на преподавателей по Дисциплине в рамках Учебного плана.'
+          description: 'Нагрузка на преподавателей по Дисциплине в рамках данного учебного плана'
           type: array
           items:
             $ref: '#/components/schemas/AcademicLoad'
@@ -826,9 +929,9 @@ components:
     AcademicLoad:
       description: 'Академическая нагрузка, отражающая привязку типа учебного занятия Дисциплины к Сотруднику (Преподавателю)'
       required:
-      - id
-      - teacherId
-      - learningActivityType
+        - id
+        - teacherId
+        - learningActivityType
       properties:
         id:
           description: 'Уникальный неизменный идентификатор Нагрузки'
@@ -850,9 +953,9 @@ components:
     StudentTimeTableForm:
       description: 'Форма запроса для получения расписания студента'
       required:
-      - studentId
-      - dateStart
-      - dateEnd
+        - studentId
+        - dateStart
+        - dateEnd
       properties:
         studentId:
           description: 'Идентификатор персоны (студента'
@@ -866,12 +969,31 @@ components:
           type: string
           format: date
       type: object
+    GroupTimeTableForm:
+      description: 'Форма запроса для получения расписания группы студентов'
+      required:
+        - groupId
+        - dateStart
+        - dateEnd
+      properties:
+        groupId:
+          description: 'Идентификатор группы студентов'
+          type: integer
+        dateStart:
+          description: 'Дата с которой нужно получить события в расписании'
+          type: string
+          format: date
+        dateEnd:
+          description: 'Дата до которой нужно получить события в расписании'
+          type: string
+          format: date
+      type: object
     TeacherTimeTableForm:
       description: 'Форма запроса для получения расписания преподователя'
       required:
-      - teacherId
-      - dateStart
-      - dateEnd
+        - teacherId
+        - dateStart
+        - dateEnd
       properties:
         teacherId:
           description: 'Идентификатор персоны (преподавателя)'
@@ -989,15 +1111,15 @@ components:
       type: http
       scheme: bearer
 tags:
--
-  name: Auth
-  description: 'Аутентификация'
--
-  name: OrgChart
-  description: 'Организационная структура'
--
-  name: Academic
-  description: 'Учебный процесс'
+  -
+    name: Auth
+    description: 'Аутентификация'
+  -
+    name: OrgChart
+    description: 'Организационная структура'
+  -
+    name: Academic
+    description: 'Учебный процесс'
 externalDocs:
   description: 'Ссылка на yaml-исходник данной спецификации'
-  url: 'https://bitbucket.org/'
+  url: 'https://bitbucket.org/moco/infotech/src/develop/doc/api_mkr/mkr_moco_api_0.1.0.yaml'

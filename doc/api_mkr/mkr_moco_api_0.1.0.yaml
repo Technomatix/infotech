@@ -39,8 +39,8 @@ paths:
     post:
       tags:
         - Academ
-      summary: 'Получение полного списка дисциплин.'
-      description: 'Получение полного плоского списка дисциплин.'
+      summary: 'Получение учебных планов в выбраном учебном году и семестре по выбраным дисциплинам.'
+      description: 'Получение учебных планов в выбраном учебном году и семестре по выбраным дисциплинам.'
       operationId: getAcademLearningPlans
       requestBody:
         required: true
@@ -50,7 +50,7 @@ paths:
               $ref: '#/components/schemas/AcademLearningPlansForm'
       responses:
         '200':
-          description: 'Учебный планы в выбном учебном году и семестре по выбраным дисциплинам'
+          description: 'Учебный планы в выбраном учебном году и семестре по выбраным дисциплинам'
           content:
             application/json:
               schema:
@@ -393,6 +393,34 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/OrgChair'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '422':
+          $ref: '#/components/responses/422'
+  /org/teacher-identifiers:
+    post:
+      tags:
+        - Org
+      summary: 'Получение списка индификаторов преподавателей.'
+      description: 'Получение списка индификаторов преподавателей.'
+      operationId: getOrgTeacherIdentifiers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeacherIdentifiersForm'
+      responses:
+        '200':
+          description: 'Список индификаторов преподавателей'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TeacherIdentifier'
         '401':
           $ref: '#/components/responses/401'
         '403':
@@ -831,6 +859,12 @@ components:
           description: токен
           type: string
       type: object
+    TeacherIdentifiersForm:
+      properties:
+        lastId:
+          description: lastId
+          type: integer
+      type: object
     FreeClassroomFilterForm:
       description: 'форма для получения списка свободных аудиторий'
       required:
@@ -1094,16 +1128,16 @@ components:
       description: 'Моделька для персон'
       properties:
         id:
-          description: 'id преподователя'
+          description: 'id преподавателя'
           type: integer
         firstName:
-          description: 'имя преподователя'
+          description: 'имя преподавателя'
           type: string
         secondName:
-          description: 'отчество преподователя'
+          description: 'отчество преподавателя'
           type: string
         lastName:
-          description: 'фамилия преподователя'
+          description: 'фамилия преподавателя'
           type: string
       type: object
     TeacherByName:
@@ -1370,6 +1404,16 @@ components:
               description: 'тип структуры 0-ВУЗ 1-техникум'
               type: integer
           type: object
+    TeacherIdentifier:
+      description: 'Моделька для преподователей (связь с другими системами)'
+      properties:
+        id:
+          description: 'id преподавателя'
+          type: integer
+        hash:
+          description: hash
+          type: string
+      type: object
     MarkDocsForm:
       description: 'форма для пометки документов как прочитаного'
       required:

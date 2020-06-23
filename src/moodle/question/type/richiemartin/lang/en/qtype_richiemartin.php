@@ -1,0 +1,32 @@
+<?php
+
+$string['configintro'] = 'Default values for richiemartin questions.';
+$string['configshuffleanswers'] = 'Default setting for option shuffling in richiemartin questions.';
+$string['deletedchoice'] = 'This choice was deleted after the attempt was started.';
+$string['enterfeedbackhere'] = 'Enter feedback here.';
+$string['entergeneralfeedbackhere'] = 'Enter general feedback here.';
+$string['enteroptionhere'] = '';
+$string['enterstemhere'] = 'Enter the stem, a question or a part of a sentence, here.';
+$string['generalfeedback'] = 'General Feedback.';
+$string['generalfeedback_help'] = 'The same general feedback is displayed regardless of the answer chosen.';
+$string['maxpoints'] = 'Max. points';
+$string['mustsupplyresponses'] = 'You must supply values for all responses.';
+$string['mustsupplyvalue'] = 'You must supply a value here.';
+$string['oneanswerperrow'] = 'Please answer all parts of the question.';
+$string['optionno'] = 'Option {$a}';
+$string['pluginname'] = 'Richiemartin';
+$string['pluginname_help'] = 'Richiemartin questions consist of judgment and four relevant assumptions. For each option, students must enter graded scores - 11 for each block of judgments of 4 elements.';
+$string['pluginname_link'] = 'question/type/richiemartin';
+$string['pluginnameadding'] = 'Adding a Richiemartin question';
+$string['pluginnameediting'] = 'Editing a Richiemartin question';
+$string['pluginnamesummary'] = 'In Richiemartin questions, for each question you need to distribute 11 points for 4 judgments.';
+$string['responsetext1'] = 'a';
+$string['responsetext2'] = 'b';
+$string['responsetext3'] = 'c';
+$string['responsetext4'] = 'd';
+$string['responsetexts'] = 'Judgement options';
+$string['shuffleanswers'] = 'Shuffle options';
+$string['shuffleanswers_help'] = 'If enabled, the order of the options is randomly shuffled for each attempt, provided that "Shuffle within questions" in the activity settings is also enabled.';
+$string['stem'] = 'Stem';
+$string['tasktitle'] = 'Task title';
+$string['optionsandfeedback'] = 'Options';

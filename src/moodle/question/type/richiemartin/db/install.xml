@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="question/type/richiemartin/db" VERSION="20140924"
+	COMMENT="XMLDB file for Moodle question/type/richiemartin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../../../../lib/xmldb/xmldb.xsd">
+	<TABLES>
+		<TABLE NAME="qtype_richiemartin_options" COMMENT="Contains info about richiemartin questions">
+			<FIELDS>
+				<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true"
+					SEQUENCE="true" />
+				<FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true"
+					SEQUENCE="false" COMMENT="FK to question table" />
+				<FIELD NAME="shuffleanswers" TYPE="int" LENGTH="4" NOTNULL="true"
+					DEFAULT="1" SEQUENCE="false"
+					COMMENT="Whether the options should be shuffled with each attempt." />
+				<FIELD NAME="numberofrows" TYPE="int" LENGTH="4" NOTNULL="true"
+					DEFAULT="4" SEQUENCE="false" COMMENT="The number options used by richiemartin questions." />
+				<FIELD NAME="numberofcolumns" TYPE="int" LENGTH="4" NOTNULL="true"
+					DEFAULT="2" SEQUENCE="false" COMMENT="The number of responses of richiemartin questions." />
+			</FIELDS>
+			<KEYS>
+				<KEY NAME="primary" TYPE="primary" FIELDS="id" />
+				<KEY NAME="questionidfk" TYPE="foreign" FIELDS="questionid"
+					REFTABLE="question" REFFIELDS="id" COMMENT="fk to question table" />
+			</KEYS>
+		</TABLE>
+		<TABLE NAME="qtype_richiemartin_columns" COMMENT="The responses of richiemartin questions">
+			<FIELDS>
+				<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true"
+					SEQUENCE="true" />
+				<FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true"
+					SEQUENCE="false" COMMENT="FK to question table" />
+				<FIELD NAME="number" TYPE="int" LENGTH="4" NOTNULL="true"
+					SEQUENCE="false" COMMENT="The sequential number of the response." />
+				<FIELD NAME="responsetext" TYPE="text" NOTNULL="true"
+					SEQUENCE="false" COMMENT="The responsetext." />
+				<FIELD NAME="responsetextformat" TYPE="int" LENGTH="2"
+					NOTNULL="true" DEFAULT="0" SEQUENCE="false"
+					COMMENT="The format of the response text (default FORMAT_MOODLE==0)." />
+			</FIELDS>
+			<KEYS>
+				<KEY NAME="primary" TYPE="primary" FIELDS="id" />
+			</KEYS>
+			<INDEXES>
+				<INDEX NAME="richiemartinid_idx" UNIQUE="false" FIELDS="questionid" />
+			</INDEXES>
+		</TABLE>
+		<TABLE NAME="qtype_richiemartin_grades" COMMENT="Contains calculated grades info">
+			<FIELDS>
+				<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+				<FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="FK to question table" />
+				<FIELD NAME="scale" TYPE="int" LENGTH="3" NOTNULL="true" SEQUENCE="false" COMMENT="Number of scale" />
+				<FIELD NAME="amount" TYPE="int" LENGTH="3" NOTNULL="true" SEQUENCE="false" COMMENT="The amount of points by richiemartin question." />
+				<FIELD NAME="value" TYPE="char" LENGTH="100" NOTNULL="true" SEQUENCE="false" COMMENT="Calculated by scale value of richiemartin question." />
+				<FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"  COMMENT="FK to user table" />
+			</FIELDS>
+			<KEYS>
+				<KEY NAME="primary" TYPE="primary" FIELDS="id" />
+				<KEY NAME="questionidfk" TYPE="foreign" FIELDS="questionid" REFTABLE="question" REFFIELDS="id" COMMENT="fk to question table" />
+				<KEY NAME="useridfk" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id" COMMENT="fk to user table" />
+			</KEYS>
+		</TABLE>
+	</TABLES>
+</XMLDB>

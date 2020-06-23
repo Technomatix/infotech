@@ -1,0 +1,32 @@
+<?php
+
+$string['configintro'] = 'Значення за замовчуванням для питань richiemartin.';
+$string['configshuffleanswers'] = 'Налаштування за замовчуванням для перестановки опцій в питаннях richiemartin.';
+$string['deletedchoice'] = 'Цей вибір був видалений після початку спроби.';
+$string['enterfeedbackhere'] = 'Введіть відгук тут.';
+$string['entergeneralfeedbackhere'] = 'Введіть загальний відгук тут.';
+$string['enteroptionhere'] = '';
+$string['enterstemhere'] = 'Введіть тут підставу, питання або частину пропозиції.';
+$string['generalfeedback'] = "Загальний зворотній зв'язок.";
+$string['generalfeedback_help'] = 'Один і той же загальний відгук відображається незалежно від обраної відповіді.';
+$string['maxpoints'] = 'Максимум очок';
+$string['mustsupplyresponses'] = 'Ви повинні вказати значення для всіх відповідей.';
+$string['mustsupplyvalue'] = 'Ви повинні вказати тут значення.';
+$string['oneanswerperrow'] = 'Будь ласка, дайте відповідь на всі частини питання.';
+$string['optionno'] = 'Option {$a}';
+$string['pluginname'] = 'Richiemartin';
+$string['pluginname_help'] = 'Питання Richiemartin складаються з судження і чотирьох відповідних припущень. Для кожного варіанта студенти повинні занести оцінювані бали - 11 на кожен блок суджень з 4-х елементів. ';
+$string['pluginname_link'] = 'question / type / richiemartin';
+$string['pluginnameadding'] = 'Додавання питання Richiemartin';
+$string['pluginnameediting'] = 'Редагування питання Richiemartin';
+$string['pluginnamesummary'] = 'У питаннях Richiemartin на кожне питання потрібно розподілити 11 балів по 4-м судженням.';
+$string['responsetext1'] = 'а';
+$string['responsetext2'] = 'б';
+$string['responsetext3'] = 'в';
+$string['responsetext4'] = 'г';
+$string['responsetexts'] = 'Маркер варіанту відповіді';
+$string['shuffleanswers'] = 'Випадковий вибір порядку питань';
+$string['shuffleanswers_help'] = 'Якщо включено, порядок питань випадковим чином перетасовується для кожної спроби, за умови, що "Перемішати в питаннях" в налаштуваннях активності також включено. ';
+$string['stem'] = 'Опис типу тесту';
+$string['tasktitle'] = 'Назва';
+$string['optionsandfeedback'] = 'Опції';

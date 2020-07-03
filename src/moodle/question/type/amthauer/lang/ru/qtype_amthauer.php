@@ -1,0 +1,47 @@
+<?php
+
+$string['configintro'] = 'Значения по умолчанию для вопросов amthauer.';
+$string['configscoringmethod'] = 'Метод оценки по умолчанию для вопросов amthauer.';
+$string['configshuffleanswers'] = 'Настройка по умолчанию для перестановки опций в вопросах amthauer.';
+$string['deletedchoice'] = ' Этот выбор был удален после начала попытки. ';
+$string['enterfeedbackhere'] = 'Введите отзыв здесь.';
+$string['entergeneralfeedbackhere'] = 'Введите общий отзыв здесь.';
+$string['enteroptionhere'] = '';
+$string['enterstemhere'] = 'Введите здесь основание, вопрос или часть предложения.';
+$string['false'] = 'False';
+$string['generalfeedback'] = 'Общая обратная связь.';
+$string['generalfeedback_help'] = 'Один и тот же общий отзыв отображается независимо от выбранного ответа.';
+$string['maxpoints'] = 'Максимум очков';
+$string['mustsupplyresponses'] = 'Вы должны указать значения для всех ответов.';
+$string['mustsupplyvalue'] = 'Вы должны указать здесь значение.';
+$string['oneanswerperrow'] = 'Пожалуйста, ответьте на все части вопроса.';
+$string['optionno'] = 'Вопрос {$a}';
+$string['pluginname'] = 'Amthauer';
+$string['pluginname_help'] = 'Вам предлагаются ряды слов, по 5 в каждом. Из всех пяти слов четыре могут быть объединены в одну группу по общему смыслу. Пятое, лишнее по значению слово, и есть Вашим ответом.';
+$string['pluginname_link'] = 'question / type / amthauer';
+$string['pluginnameadding'] = 'Добавление вопроса Amthauer';
+$string['pluginnameediting'] = 'Редактирование вопроса Amthauer';
+$string['pluginnamesummary'] = 'В вопросах Amthauer должны быть выбран один вариант из 5-ти предложенных.';
+$string['scoringsub2'] = 'Субтест 2';
+$string['scoringsub2_help'] = 'Студент получает баллы за каждый правильный ответ, по градации субтест 2.';
+$string['scoringsub3'] = 'Субтест 3';
+$string['scoringsub3_help'] = 'Студент получает баллы за каждый правильный ответ, по градации субтест 3.';
+//$string['scoringsubpoints'] = 'Подпункты';
+//$string['scoringsubpoints_help'] = 'Учащийся получает баллы за каждый правильный ответ.';
+$string['showscoringmethod'] = 'Показать метод оценки';
+$string['showscoringmethod_help'] = 'Если этот параметр включен, учащиеся увидят метод оценки в викторинах';
+$string['scoringmethod'] = 'Метод оценки';
+$string['scoringmethod_help'] = '<strong> Субтест 2:</strong> Студент получает баллы за каждый правильный ответ, по градации субтест 2.' . '<br/><strong>Субтест 3:</strong>. Студент получает баллы за каждый правильный ответ, по градации субтест 3.'/*. '<br/> <strong> Подпункты: </strong> студент получает подпункты за каждый правильный ответ. '*/;
+$string['shuffleanswers'] = 'Параметры случайного выбора';
+$string['shuffleanswers_help'] = 'Если включено, порядок параметров случайным образом перетасовывается для каждой попытки, при условии, что "Перемешать в вопросах" в настройках активности также включено. ';
+$string['stem'] = 'Описание типа теста';
+$string['tasktitle'] = 'Название';
+$string['true'] = 'True';
+$string['optionsandfeedback'] = 'Опции и обратная связь';
+$string['correctresponse'] = 'Правильный ответ';
+
+$string['amthauer_head_1'] = 'а';
+$string['amthauer_head_2'] = 'б';
+$string['amthauer_head_3'] = 'в';
+$string['amthauer_head_4'] = 'г';
+$string['amthauer_head_5'] = 'д';

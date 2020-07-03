@@ -1,0 +1,47 @@
+<?php
+
+$string['configintro'] = 'Default values for amthauer questions.';
+$string['configscoringmethod'] = 'Default scoring method for amthauer questions.';
+$string['configshuffleanswers'] = 'Default setting for option shuffling in amthauer questions.';
+$string['deletedchoice'] = 'This choice was deleted after the attempt was started.';
+$string['enterfeedbackhere'] = 'Enter feedback here.';
+$string['entergeneralfeedbackhere'] = 'Enter general feedback here.';
+$string['enteroptionhere'] = '';
+$string['enterstemhere'] = 'Enter the stem, a question or a part of a sentence, here.';
+$string['false'] = 'False';
+$string['generalfeedback'] = 'General Feedback.';
+$string['generalfeedback_help'] = 'The same general feedback is displayed regardless of the answer chosen.';
+$string['maxpoints'] = 'Max. points';
+$string['mustsupplyresponses'] = 'You must supply values for all responses.';
+$string['mustsupplyvalue'] = 'You must supply a value here.';
+$string['oneanswerperrow'] = 'Please answer all parts of the question.';
+$string['optionno'] = 'Option {$a}';
+$string['pluginname'] = 'Amthauer';
+$string['pluginname_help'] = 'You are offered a series of words, 5 in each. Of the five words, four can be grouped together in a common sense. The fifth word, which is superfluous, is your answer.';
+$string['pluginname_link'] = 'question/type/amthauer';
+$string['pluginnameadding'] = 'Adding a amthauer question';
+$string['pluginnameediting'] = 'Editing a amthauer question';
+$string['pluginnamesummary'] = 'In matters of Amthauer, one option out of the 5 proposed should be selected.';
+$string['scoringsub2'] = 'Sub test 2';
+$string['scoringsub2_help'] = 'The student receives points for each correct answer, according to graduation Sub test 2.';
+$string['scoringsub3'] = 'Sub test 3';
+$string['scoringsub3_help'] = 'The student receives points for each correct answer, according to graduation Sub test 3.';
+//$string['scoringsubpoints'] = 'Subpoints';
+//$string['scoringsubpoints_help'] = 'The student is awarded subpoints for each correct response.';
+$string['showscoringmethod'] = 'Show scoring method';
+$string['showscoringmethod_help'] = 'If this setting is enabled, students will see the scoring method in quizes';
+$string['scoringmethod'] = 'Scoring method';
+$string['scoringmethod_help'] = '<strong>Sub test 2:</strong> The student receives points for each correct answer, according to graduation Sub test 2.<br/><strong>Sub test 3:</strong> The student receives points for each correct answer, according to graduation Sub test 3.'/* . '<br/><strong>Subpoints:</strong> The student is awarded subpoints for each correct response.'*/;
+$string['shuffleanswers'] = 'Shuffle options';
+$string['shuffleanswers_help'] = 'If enabled, the order of the options is randomly shuffled for each attempt, provided that "Shuffle within questions" in the activity settings is also enabled.';
+$string['stem'] = 'Stem';
+$string['tasktitle'] = 'Task title';
+$string['true'] = 'True';
+$string['optionsandfeedback'] = 'Options and Feedback';
+$string['correctresponse'] = 'Correct Response';
+
+$string['amthauer_head_1'] = 'a';
+$string['amthauer_head_2'] = 'b';
+$string['amthauer_head_3'] = 'c';
+$string['amthauer_head_4'] = 'd';
+$string['amthauer_head_5'] = 'e';

@@ -1,0 +1,47 @@
+<?php
+
+$string['configintro'] = 'Значення за замовчуванням для питань amthauer.';
+$string['configscoringmethod'] = 'Метод оцінки за замовчуванням для питань amthauer.';
+$string['configshuffleanswers'] = 'Налаштування за замовчуванням для перестановки опцій в питаннях amthauer.';
+$string['deletedchoice'] = 'Цей вибір був видалений після початку спроби. ';
+$string['enterfeedbackhere'] = 'Введіть відгук тут.';
+$string['entergeneralfeedbackhere'] = 'Введіть загальний відгук тут.';
+$string['enteroptionhere'] = '';
+$string['enterstemhere'] = 'Введіть тут підстава, питання або частина пропозиції.';
+$string['false'] = 'False';
+$string['generalfeedback'] = "Загальна зворотний зв'язок.";
+$string['generalfeedback_help'] = 'Один і той же загальний відгук відображається незалежно від обраного відповіді.';
+$string['maxpoints'] = 'Максимум очок';
+$string['mustsupplyresponses'] = 'Ви повинні вказати значення для всіх відповідей.';
+$string['mustsupplyvalue'] = 'Ви повинні вказати тут значення.';
+$string['oneanswerperrow'] = 'Будь ласка, дайте відповідь на всі частини питання.';
+$string['optionno'] = 'Питання {$a}';
+$string['pluginname'] = 'Amthauer';
+$string['pluginname_help'] = 'Вам пропонуються ряди слів, по 5 у кожному. З усіх п’яти слів чотири можна об’єднані в одну групу за загальним змістом. П’яте, зайве за значенням слово, і є Вашою відповіддю.';
+$string['pluginname_link'] = 'question / type / amthauer';
+$string['pluginnameadding'] = 'Додавання питання Amthauer';
+$string['pluginnameediting'] = 'Редагування питання Amthauer';
+$string['pluginnamesummary'] = 'У питаннях Amthauer повинні бути обраний один варіант з 5-ти запропонованих.';
+$string['scoringsub2'] = 'Субтест 2';
+$string['scoringsub2_help'] = 'Студент отримує бали за кожну правильну відповідь, по градації субтест 2.';
+$string['scoringsub3'] = 'Субтест 3';
+$string['scoringsub3_help'] = 'Студент отримує бали за кожну правильну відповідь, по градації субтест 3.';
+// $string['scoringsubpoints'] = 'Підпункти';
+// $string['scoringsubpoints_help'] = 'Учень отримує бали за кожну правильну відповідь.';
+$string['showscoringmethod'] = 'Показати метод оцінки';
+$string['showscoringmethod_help'] = 'Якщо цей параметр включений, учні побачать метод оцінки в вікторинах';
+$string['scoringmethod'] = 'Метод оцінки';
+$string['scoringmethod_help'] = '<strong> Субтест 2: </strong> Студент отримує бали за кожну правильну відповідь, по градації субтест 2.' . '<br/> <strong> Субтест 3: </strong>. Студент отримує бали за кожну правильну відповідь, по градації субтест 3. '; //. '<br/> <strong> Підпункти: </strong> студент отримує підпункти за кожну правильну відповідь. '
+$string['shuffleanswers'] = 'Параметри випадкового вибору';
+$string['shuffleanswers_help'] = 'Якщо включено, порядок параметрів випадковим чином перетасовується для кожної спроби, за умови, що "Перемішати в питаннях" в налаштуваннях активності також включено. ';
+$string['stem'] = 'Опис типу тесту';
+$string['tasktitle'] = 'Назва';
+$string['true'] = 'True';
+$string['optionsandfeedback'] = "Опції і зворотний зв'язок";
+$string['correctresponse'] = 'Правильна відповідь';
+
+$string['amthauer_head_1'] = 'а';
+$string['amthauer_head_2'] = 'б';
+$string['amthauer_head_3'] = 'в';
+$string['amthauer_head_4'] = 'г';
+$string['amthauer_head_5'] = 'д';

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="question/type/amthauer/db" VERSION="20140924"
+	COMMENT="XMLDB file for Moodle question/type/amthauer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../../../../lib/xmldb/xmldb.xsd">
+	<TABLES>
+		<TABLE NAME="qtype_amthauer_options" COMMENT="Contains info about amthauer questions">
+			<FIELDS>
+				<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true"
+					SEQUENCE="true" />
+				<FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true"
+					SEQUENCE="false" COMMENT="FK to question table" />
+				<FIELD NAME="scoringmethod" TYPE="char" LENGTH="200" NOTNULL="true"
+					SEQUENCE="false" COMMENT="The scoring method used in the amthauer question ('scoringsub2', 'scoringsub3' or 'subpoints')." />
+				<FIELD NAME="shuffleanswers" TYPE="int" LENGTH="4" NOTNULL="true"
+					DEFAULT="1" SEQUENCE="false"
+					COMMENT="Whether the options should be shuffled with each attempt." />
+				<FIELD NAME="numberofrows" TYPE="int" LENGTH="4" NOTNULL="true"
+					DEFAULT="4" SEQUENCE="false" COMMENT="The number options used by amthauer questions." />
+				<FIELD NAME="numberofcolumns" TYPE="int" LENGTH="4" NOTNULL="true"
+					DEFAULT="2" SEQUENCE="false" COMMENT="The number of responses of amthauer questions." />
+			</FIELDS>
+			<KEYS>
+				<KEY NAME="primary" TYPE="primary" FIELDS="id" />
+				<KEY NAME="questionidfk" TYPE="foreign" FIELDS="questionid" REFTABLE="question" REFFIELDS="id" COMMENT="fk to question table" />
+			</KEYS>
+		</TABLE>
+		<TABLE NAME="qtype_amthauer_rows" COMMENT="The options of amthauer questions">
+			<FIELDS>
+				<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true"
+					SEQUENCE="true" />
+				<FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true"
+					SEQUENCE="false" COMMENT="FK to question table" />
+				<FIELD NAME="number" TYPE="int" LENGTH="4" NOTNULL="true"
+					SEQUENCE="false" />
+				<FIELD NAME="optiontext" TYPE="text" NOTNULL="true" SEQUENCE="false"
+					COMMENT="The text of the option" />
+				<FIELD NAME="optiontextformat" TYPE="int" LENGTH="2" NOTNULL="true"
+					DEFAULT="0" SEQUENCE="false"
+					COMMENT="The format of the option text (default FORMAT_MOODLE==0)." />
+				<FIELD NAME="optionfeedback" TYPE="text" NOTNULL="false"
+					SEQUENCE="false" COMMENT="The feedback of the option." />
+				<FIELD NAME="optionfeedbackformat" TYPE="int" LENGTH="2"
+					NOTNULL="true" DEFAULT="0" SEQUENCE="false"
+					COMMENT="The format of the option feedback (default FORMAT_MOODLE)." />
+			</FIELDS>
+			<KEYS>
+				<KEY NAME="primary" TYPE="primary" FIELDS="id" />
+			</KEYS>
+			<INDEXES>
+				<INDEX NAME="amthauerid_idx" UNIQUE="false" FIELDS="questionid" />
+			</INDEXES>
+		</TABLE>
+		<TABLE NAME="qtype_amthauer_columns" COMMENT="The responses of amthauer questions">
+			<FIELDS>
+				<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+				<FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="FK to question table" />
+				<FIELD NAME="rowid" TYPE="int" LENGTH="4" NOTNULL="true" SEQUENCE="false" COMMENT="The number of row of the question." />
+				<FIELD NAME="number" TYPE="int" LENGTH="4" NOTNULL="true" SEQUENCE="false" COMMENT="The sequential number of the response." />
+				<FIELD NAME="responsetext" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="The responsetext." />
+				<FIELD NAME="responsetextformat" TYPE="int" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The format of the response text (default FORMAT_MOODLE==0)." />
+			</FIELDS>
+			<KEYS>
+				<KEY NAME="primary" TYPE="primary" FIELDS="id" />
+				<KEY NAME="amthauerrowsidfk" TYPE="foreign" FIELDS="rowid" REFTABLE="qtype_amthauer_rows" REFFIELDS="id" COMMENT="fk to rows table" />
+			</KEYS>
+			<INDEXES>
+				<INDEX NAME="amthauerid_idx" UNIQUE="false" FIELDS="questionid" />
+			</INDEXES>
+		</TABLE>
+		<TABLE NAME="qtype_amthauer_weights" COMMENT="The weights of the row-column combinations, i.e. 1.0 (correct) or 0.0 (incorrect).">
+			<FIELDS>
+				<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+				<FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="The reference to the question." />
+				<FIELD NAME="rownumber" TYPE="int" LENGTH="4" NOTNULL="true" SEQUENCE="false" COMMENT="The row of the row-column combination." />
+				<FIELD NAME="columnnumber" TYPE="int" LENGTH="4" NOTNULL="true" SEQUENCE="false" />
+				<FIELD NAME="weight" TYPE="number" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" DECIMALS="3" />
+			</FIELDS>
+			<KEYS>
+				<KEY NAME="primary" TYPE="primary" FIELDS="id" />
+				<KEY NAME="questionidfk" TYPE="foreign" FIELDS="questionid" REFTABLE="question" REFFIELDS="id" />
+			</KEYS>
+		</TABLE>
+		<TABLE NAME="qtype_amthauer_grades" COMMENT="Contains calculated grades info">
+			<FIELDS>
+				<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+				<FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="FK to question table" />
+				<FIELD NAME="amount" TYPE="int" LENGTH="3" NOTNULL="true" SEQUENCE="false" COMMENT="The amount of points by amthauer question." />
+				<FIELD NAME="value" TYPE="int" LENGTH="3" NOTNULL="true" SEQUENCE="false" COMMENT="Calculated by scale value of amthauer question." />
+				<FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"  COMMENT="FK to user table" />
+			</FIELDS>
+			<KEYS>
+				<KEY NAME="primary" TYPE="primary" FIELDS="id" />
+				<KEY NAME="questionidfk" TYPE="foreign" FIELDS="questionid" REFTABLE="question" REFFIELDS="id" COMMENT="fk to question table" />
+				<KEY NAME="useridfk" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id" COMMENT="fk to user table" />
+			</KEYS>
+		</TABLE>
+	</TABLES>
+</XMLDB>

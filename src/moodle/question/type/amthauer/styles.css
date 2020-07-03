@@ -1,0 +1,292 @@
+/**  The amthauer question rendering table */
+.que.amthauer table.amthauer {
+    display: inline-table;
+    border-spacing: 0px 5px;
+    border-collapse: separate;
+}
+
+.que.amthauer table.amthauer th, .que.amthauer table.amthauer td {
+    position: relative;
+}
+
+.que.amthauer table.amthauer div.r0 label,
+.que.amthauer table.amthauer div.r1 label,
+.que.amthauer table.amthauer div.r0 div.specificfeedback,
+.que.amthauer table.amthauer div.r1 div.specificfeedback {
+    /* In Chrome and IE, the text-indent above is applied to any embedded table
+        cells or <li>s, which screws up the intended layout. This fixes it again. */
+    text-indent: 0 !important;
+}
+
+.que.amthauer .answer div.r0 input,
+.que.amthauer .answer div.r1 input {
+    margin: 0 5px;
+    padding: 0;
+    width: 15px;
+}
+
+.dir-rtl .que.amthauer .answer div.r0,
+.dir-rtl .que.amthauer .answer div.r1 {
+    padding: 0.3em 25px 0.3em 0;
+}
+
+.que.amthauer table.amthauer tbody tr {
+    margin-bottom: 2em;
+    margin-top: 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-top: 0;
+}
+
+.que.amthauer table.amthauer th {
+    border-width: 3px;
+}
+
+.que.amthauer table.amthauer td,
+.que.amthauer table.amthauer th {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 50px;
+}
+
+.que.amthauer table.amthauer tbody td.optiontext {
+    min-width: 10em;
+    text-align: left;
+    padding-right: 4em;
+}
+
+.que.amthauer table.amthauer tbody td.amthauerresponsebutton {
+    opacity: 0.1;
+    filter: alpha(opacity = 10); /* msie */
+    background-color: #000;
+}
+
+.amthauergreyingout {
+    opacity: 0.3;
+    filter: alpha(opacity = 30);
+}
+
+.que.amthauer table.amthauer tbody td.correctness {
+    vertical-align: middle;
+    display: table-cell;
+    border-radius: 0px;
+    border-left: #777 solid 3px !important;
+}
+
+td.amthauercorrectness {
+    border-left: #AAA solid 1px;
+    text-align: center;
+    align: center;
+}
+
+.que.amthauer table.amthauer tbody td.feedback {
+    padding-left: 1em;
+}
+
+.que.amthauer table.amthauer tbody td.feedback div.specificfeedback {
+    background: #FFF3BF !important;
+    text-align: left !important;
+}
+
+.que.amthauer .formulation {
+    overflow: auto;
+    max-height: 560px;
+}
+
+.amthauerspecificfeedback {
+    background: #FFF3BF !important;
+    text-align: left !important;
+}
+
+.que.amthauer table.amthauer .lastcol p {
+    display: inline;
+    margin: 0px;
+    margin-left: 5px;
+}
+
+.amthauer table.generaltable > thead > tr > th.header:not(:first-child):not(.amthauercorrectness) {
+    text-align: right;
+    padding-right: 2%;
+    width: 18%;
+}
+
+.amthauer table.generaltable > thead > tr > th.header:first-child {
+    width: 5%;
+}
+
+.amthauer table.generaltable td.optiontext[colspan] {
+    text-align: left;
+}
+
+#page-mod-quiz-review .que.amthauer table.generaltable > thead > tr > th.header:not(:first-child):not(.amthauercorrectness) {
+    padding-right: 3%;
+}
+
+#page-mod-quiz-review .que.amthauer table.generaltable th, #page-mod-quiz-review .que.amthauer table.generaltable td {
+    padding: 2px;
+}
+
+#page-mod-quiz-attempt .que.amthauer .amthauerresponsebutton label {
+    margin-bottom: 0;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+#page-mod-quiz-attempt .que.amthauer .amthauerresponsebutton .cell-with-data, #page-mod-quiz-review .que.amthauer .amthauerresponsebutton .cell-with-data {
+    display: flex;
+}
+
+/* ====================================*/
+/** The question editing form */
+/* ====================================*/
+
+body#page-question-type-amthauer div.optionbox {
+    margin-top: 0;
+    padding-bottom: 15px;
+    padding-top: 5px;
+    display: flex;
+}
+
+body#page-question-type-amthauer div.option_question {
+    /*flex-grow: 1;*/
+    /*flex: 1;*/
+    padding-right: 6px;
+    word-break: break-word;
+}
+body#page-question-type-amthauer div.option_answer {
+    flex-shrink: 1;
+}
+
+/* Put response checkboxes in the middle */
+body#page-question-type-amthauer div.responses {
+    width: auto;
+    margin-bottom: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 0;
+    position: relative;
+}
+
+@media ( max-width : 986px) {
+    body#page-question-type-amthauer div.responses {
+        padding-top: 0px;
+    }
+}
+
+body#page-question-type-amthauer div.feedbacktext div.fitemtitle {
+    padding-left: 0px;
+    padding-top: 0px;
+}
+
+body#page-question-type-multichoice div[id^=fitem_id_][id*=feedback_] {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border: 1px solid #BBB;
+    border-bottom: 0;
+}
+
+body#page-question-type-amthauer div[id^=fitem_id_][id*=option_] {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+body#page-question-type-amthauer div[id^=fgroup_id_][id*=responses_] {
+    margin-bottom: 2em;
+    margin-top: 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border: 1px solid #BBB;
+    border-top: 0;
+}
+
+body#page-question-type-amthauer div[id^=fgroup_id_weightsarray] {
+    margin-top: 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-top: 0;
+}
+
+@supports (display:-ms-grid) {
+    body#page-question-type-amthauer #id_questiontexteditable,
+    body#page-question-type-amthauer #id_generalfeedbackeditable,
+    body#page-question-type-amthauer .optionbox,
+    .que.amthauer .optiontext,
+    .amthauerspecificfeedback {
+        word-break: break-all;
+    }
+}
+
+body#page-question-type-amthauer #id_questiontexteditable,
+body#page-question-type-amthauer #id_generalfeedbackeditable,
+body#page-question-type-amthauer .optionbox,
+.que.amthauer .optiontext,
+.amthauerspecificfeedback {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+body#page-question-type-amthauer div.responses .form-check-input {
+    position: inherit;
+}
+
+body#page-question-type-amthauer div.responses .response-item {
+    display: flex;
+}
+
+body#page-question-type-amthauer div.responses div.response-item div.form-group:last-child {
+    flex-wrap: wrap-reverse;
+}
+
+body#page-question-type-amthauer div.optiontext div.row {
+    flex-wrap: nowrap;
+}
+
+#page-question-type-amthauer div.optiontext div.scoringsub2 {
+    display: block;
+}
+
+#page-question-type-amthauer div.optiontext div.scoringsub2 div.col-md-3 {
+    max-width: 100%;
+}
+
+#page-question-type-amthauer div.optiontext div.scoringsub2 div.col-md-9 {
+    display: none;
+}
+
+#page-question-type-amthauer .option_answer {
+    padding-left: 50px;
+}
+
+#page-question-type-amthauer .block_form-line {
+    flex-direction: row;
+}
+
+#page-question-type-amthauer .block_form-line > div {
+    align-items: flex-start;
+}
+
+#page-question-type-amthauer .block_form-line > div:first-child .col-md-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#page-question-type-amthauer .block_form-line > div:first-child .col-md-3 span {
+    float: none!important;
+    order: 2;
+}
+
+#page-question-type-amthauer .block_form-line > div:first-child .col-md-3 label {
+    order: 1;
+}
+
+#page-question-type-amthauer .block_form-line > div:first-child .col-md-9 {
+    flex-direction: column;
+}

@@ -1,0 +1,29 @@
+<?php
+
+$string['configintro'] = 'Значения по умолчанию для вопросов amthauer субтест 6.';
+$string['configshuffleanswers'] = 'Настройка по умолчанию для перестановки опций в вопросах amthauer субтест 6.';
+$string['deletedchoice'] = ' Этот выбор был удален после начала попытки. ';
+$string['enterfeedbackhere'] = 'Введите отзыв здесь.';
+$string['entergeneralfeedbackhere'] = 'Введите общий отзыв здесь.';
+$string['enteroptionhere'] = '';
+$string['enterstemhere'] = 'Введите здесь основание, вопрос или часть предложения.';
+$string['false'] = 'False';
+$string['generalfeedback'] = 'Общая обратная связь.';
+$string['generalfeedback_help'] = 'Один и тот же общий отзыв отображается независимо от выбранного ответа.';
+$string['maxpoints'] = 'Максимум очков';
+$string['mustsupplyresponses'] = 'Вы должны указать значения для всех ответов.';
+$string['mustsupplyvalue'] = 'Вы должны указать здесь значение.';
+$string['oneanswerperrow'] = 'Пожалуйста, ответьте на все части вопроса.';
+$string['pluginname'] = 'Amthauer (6)';
+$string['pluginname_help'] = 'Вам предлагается числовой ряд, где числа расположены в определенной связи между собой. Необходимо продолжить числовой ряд в соответствии с выявленными особенностями этой связи.';
+$string['pluginname_link'] = 'question / type / amthauer6';
+$string['pluginnameadding'] = 'Добавление вопроса Amthauer субтест 6';
+$string['pluginnameediting'] = 'Редактирование вопроса Amthauer субтест 6';
+$string['pluginnamesummary'] = 'Необходимо продолжить числовой ряд в соответствии с выявленными особенностями связи в ряду.';
+$string['shuffleanswers'] = 'Параметры случайного выбора';
+$string['shuffleanswers_help'] = 'Если включено, порядок параметров случайным образом перетасовывается для каждой попытки, при условии, что "Перемешать в вопросах" в настройках активности также включено. ';
+$string['stem'] = 'Описание типа теста';
+$string['tasktitle'] = 'Название';
+$string['true'] = 'True';
+$string['optionsandfeedback'] = 'Опции и обратная связь';
+$string['correctresponse'] = 'Правильный ответ';

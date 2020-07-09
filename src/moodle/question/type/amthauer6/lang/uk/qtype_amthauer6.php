@@ -1,0 +1,29 @@
+<?php
+
+$string['configintro'] = 'Значення за замовчуванням для питань amthauer субтест 6.';
+$string['configshuffleanswers'] = 'Налаштування за замовчуванням для перестановки опцій в питаннях amthauer.';
+$string['deletedchoice'] = 'Цей вибір був видалений після початку спроби. ';
+$string['enterfeedbackhere'] = 'Введіть відгук тут.';
+$string['entergeneralfeedbackhere'] = 'Введіть загальний відгук тут.';
+$string['enteroptionhere'] = '';
+$string['enterstemhere'] = 'Введіть тут підстава, питання або частина пропозиції.';
+$string['false'] = 'False';
+$string['generalfeedback'] = "Загальний зворотний зв'язок.";
+$string['generalfeedback_help'] = 'Один і той же загальний відгук відображається незалежно від обраної відповіді.';
+$string['maxpoints'] = 'Максимум очок';
+$string['mustsupplyresponses'] = 'Ви повинні вказати значення для всіх відповідей.';
+$string['mustsupplyvalue'] = 'Ви повинні вказати тут значення.';
+$string['oneanswerperrow'] = 'Будь ласка, дайте відповідь на всі частини питання.';
+$string['pluginname'] = 'Amthauer (6)';
+$string['pluginname_help'] = 'Вам пропонується числовий ряд, де числа розташовані в певному зв\'язку між собою. Необхідно продовжити числовий ряд відповідно до виявлених особливостями зв\'язку.';
+$string['pluginname_link'] = 'question / type / amthauer';
+$string['pluginnameadding'] = 'Додавання питання Amthauer субтест 6';
+$string['pluginnameediting'] = 'Редагування питання Amthauer субтест 6';
+$string['pluginnamesummary'] = 'Необхідно продовжити числовий ряд відповідно до виявлених особливостями зв\'язку в ряду.';
+$string['shuffleanswers'] = 'Параметри випадкового вибору';
+$string['shuffleanswers_help'] = 'Якщо включено, порядок параметрів випадковим чином перетасовується для кожної спроби, за умови, що "Перемішати в питаннях" в налаштуваннях активності також включено. ';
+$string['stem'] = 'Опис типу тесту';
+$string['tasktitle'] = 'Назва';
+$string['true'] = 'True';
+$string['optionsandfeedback'] = "Опції і зворотний зв'язок";
+$string['correctresponse'] = 'Правильна відповідь';

@@ -1,0 +1,36 @@
+<?php
+
+$string['configintro'] = 'Значення за замовчуванням для питань multirowselect.';
+$string['configscoringmethod'] = 'Метод оцінки за замовчуванням для питань multirowselect.';
+$string['configshuffleanswers'] = 'Налаштування за замовчуванням для перестановки рядків в питаннях multirowselect.';
+$string['deletedchoice'] = 'Цей вибір був видалений після початку спроби. ';
+$string['enterfeedbackhere'] = 'Введіть відгук тут.';
+$string['entergeneralfeedbackhere'] = 'Введіть загальний відгук тут.';
+$string['enteroptionhere'] = '';
+$string['enterstemhere'] = 'Введіть тут підставу, питання або частину пропозиції.';
+$string['generalfeedback'] = "Загальний зворотний зв'язок.";
+$string['generalfeedback_help'] = 'Один і той же загальний відгук відображається незалежно від обраної відповіді.';
+$string['maxpoints'] = 'Максимум балів';
+$string['mustsupplyvalue'] = 'Ви повинні вказати тут значення.';
+$string['oneanswerperrow'] = 'Будь ласка, дайте відповідь на всі частини питання.';
+$string['optionno'] = 'Питання {$a}';
+$string['pluginname'] = 'Multirowselect';
+$string['pluginname_help'] = 'Прочитайте уважно твердження і поставте оцінку.';
+$string['pluginname_link'] = 'question / type / multirowselect';
+$string['pluginnameadding'] = 'Додавання питання Multirowselect';
+$string['pluginnameediting'] = 'Редагування питання Multirowselect';
+$string['pluginnamesummary'] = 'У питаннях Multirowselect потрібно обрати один варіант із запропонованих.';
+$string['jonescrendall'] = 'Джонса Крендалла';
+$string['jonescrendall_help'] = 'Студент отримує бали за градацією тесту Джонса Крендалла.';
+$string['bfq'] = "Опитувальник великої п'ятірки (ОВП)";
+$string['bfq_help'] = "Студент отримує бали за градацією тесту \"Опитувальник великої п'ятірки\".";
+$string['showscoringmethod'] = 'Показати метод оцінки';
+$string['showscoringmethod_help'] = 'Якщо цей параметр включений, учні побачать метод оцінки в вікторинах';
+$string['scoringmethod'] = 'Метод оцінки';
+$string['scoringmethod_help'] = "<strong> Джонса Крендалла: </strong> Прочитайте уважно 15 тверджень і поставте навпроти кожного з них оцінку від 1 до 4 балів відповідно до шкали: 1 - не згоден, 2 - частково не згоден, 3 - частково згоден, 4 - згоден повністю.<br/> <strong> Опитувальник великої п'ятірки (ОВП): </strong>. Оцініть ступінь прояву Ваших особистісних якостей за 5-бальною шкалою від 1 (якість відсутня або дуже слабо виражена) до 5 (якість виражено дуже яскраво). ";
+$string['shuffleanswers'] = 'Параметри випадкового розташування рядків';
+$string['shuffleanswers_help'] = 'Якщо включено, порядок параметрів випадковим чином перетасовується для кожної спроби, за умови, що "Перемішати в питаннях" в налаштуваннях активності також включено. ';
+$string['stem'] = 'Опис типу тесту';
+$string['tasktitle'] = 'Назва';
+$string['optionsandfeedback'] = "Опції і зворотний зв'язок";
+$string['correctresponse'] = 'Правильна відповідь';

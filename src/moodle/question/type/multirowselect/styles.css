@@ -1,0 +1,26 @@
+/**  The multirowselect question rendering table */
+
+.que.multirowselect table.generaltable th:first-child, .que.multirowselect table.generaltable td:first-child {
+    width: 48px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.que.multirowselect table.generaltable td.selectable-cell {
+    width: 100px;
+    text-align: right;
+}
+
+.que.multirowselect table.generaltable td.selectable-cell select {
+    width: 50px;
+}
+
+.que.multirowselect table.generaltable td.question-row-text.cell.c1 {
+    text-align: justify;
+}
+
+
+
+/* ====================================*/
+/** The question editing form */
+/* ====================================*/

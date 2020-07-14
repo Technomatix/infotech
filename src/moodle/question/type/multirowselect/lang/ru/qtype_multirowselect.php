@@ -1,0 +1,36 @@
+<?php
+
+$string['configintro'] = 'Значения по умолчанию для вопросов multirowselect.';
+$string['configscoringmethod'] = 'Метод оценки по умолчанию для вопросов multirowselect.';
+$string['configshuffleanswers'] = 'Настройка по умолчанию для перестановки строк в вопросах multirowselect.';
+$string['deletedchoice'] = ' Этот выбор был удален после начала попытки. ';
+$string['enterfeedbackhere'] = 'Введите отзыв здесь.';
+$string['entergeneralfeedbackhere'] = 'Введите общий отзыв здесь.';
+$string['enteroptionhere'] = '';
+$string['enterstemhere'] = 'Введите здесь основание, вопрос или часть предложения.';
+$string['generalfeedback'] = 'Общая обратная связь.';
+$string['generalfeedback_help'] = 'Один и тот же общий отзыв отображается независимо от выбранного ответа.';
+$string['maxpoints'] = 'Максимум баллов';
+$string['mustsupplyvalue'] = 'Вы должны указать здесь значение.';
+$string['oneanswerperrow'] = 'Пожалуйста, ответьте на все части вопроса.';
+$string['optionno'] = 'Вопрос {$a}';
+$string['pluginname'] = 'Multirowselect';
+$string['pluginname_help'] = 'Прочитайте внимательно утверждения и поставте оценку.';
+$string['pluginname_link'] = 'question / type / multirowselect';
+$string['pluginnameadding'] = 'Добавление вопроса Multirowselect';
+$string['pluginnameediting'] = 'Редактирование вопроса Multirowselect';
+$string['pluginnamesummary'] = 'В вопросах Multirowselect должен быть выбран один вариант из предложенных.';
+$string['jonescrendall'] = 'Джонса Крендалла';
+$string['jonescrendall_help'] = 'Студент получает баллы по градации теста Джонса Крендалла.';
+$string['bfq'] = 'Опросник большой пятерки(ОБП)';
+$string['bfq_help'] = 'Студент получает баллы по градации теста "Опросник большой пятерки".';
+$string['showscoringmethod'] = 'Показать метод оценки';
+$string['showscoringmethod_help'] = 'Если этот параметр включен, учащиеся увидят метод оценки в викторинах';
+$string['scoringmethod'] = 'Метод оценки';
+$string['scoringmethod_help'] = '<strong> Джонса Крендалла:</strong> Прочитайте внимательно 15 утверждений и поставьте напротив каждого из них оценку от 1 до 4 баллов согласно шкале: 1 - не согласен, 2 - частично не согласен, 3 - частично согласен, 4 - согласен полностью.' . '<br/><strong>Опросник большой пятерки (ОБП):</strong>. Оцените степень проявления Ваших личностных качеств по 5-балльной шкале от 1 (качество отсутствует или очень слабо выражена) до 5 (качество выражено очень ярко).';
+$string['shuffleanswers'] = 'Параметры случайного расположения строк';
+$string['shuffleanswers_help'] = 'Если включено, порядок параметров случайным образом перетасовывается для каждой попытки, при условии, что "Перемешать в вопросах" в настройках активности также включено. ';
+$string['stem'] = 'Описание типа теста';
+$string['tasktitle'] = 'Название';
+$string['optionsandfeedback'] = 'Опции и обратная связь';
+$string['correctresponse'] = 'Правильный ответ';

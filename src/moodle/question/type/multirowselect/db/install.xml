@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="question/type/multirowselect/db" VERSION="20140924"
+	COMMENT="XMLDB file for Moodle question/type/multirowselect" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../../../../lib/xmldb/xmldb.xsd">
+	<TABLES>
+		<TABLE NAME="qtype_multirowselect_options" COMMENT="Contains info about multirowselect questions">
+			<FIELDS>
+				<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+				<FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="FK to question table" />
+				<FIELD NAME="scoringmethod" TYPE="char" LENGTH="200" NOTNULL="true" SEQUENCE="false" COMMENT="The scoring method used in the multirowselect question ('scoringsub2', 'scoringsub3' or 'subpoints')." />
+				<FIELD NAME="shuffleanswers" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="1" SEQUENCE="false" COMMENT="Whether the options should be shuffled with each attempt." />
+				<FIELD NAME="numberofrows" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="1" SEQUENCE="false" COMMENT="The number options used by multirowselect questions." />
+			</FIELDS>
+			<KEYS>
+				<KEY NAME="primary" TYPE="primary" FIELDS="id" />
+				<KEY NAME="questionidfk" TYPE="foreign" FIELDS="questionid" REFTABLE="question" REFFIELDS="id" COMMENT="fk to question table" />
+			</KEYS>
+		</TABLE>
+		<TABLE NAME="qtype_multirowselect_rows" COMMENT="The options of multirowselect questions">
+			<FIELDS>
+				<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+				<FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="FK to question table" />
+				<FIELD NAME="number" TYPE="int" LENGTH="4" NOTNULL="true" SEQUENCE="false" />
+				<FIELD NAME="optiontext" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="The text of the option" />
+			</FIELDS>
+			<KEYS>
+				<KEY NAME="primary" TYPE="primary" FIELDS="id" />
+			</KEYS>
+			<INDEXES>
+				<INDEX NAME="multirowselectid_idx" UNIQUE="false" FIELDS="questionid" />
+			</INDEXES>
+		</TABLE>
+		<TABLE NAME="qtype_jonescrendall_grades" COMMENT="Contains calculated grades info">
+			<FIELDS>
+				<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+				<FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="FK to question table" />
+				<FIELD NAME="amount" TYPE="int" LENGTH="3" NOTNULL="true" SEQUENCE="false" COMMENT="The amount of points by jonescrendall question." />
+				<FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"  COMMENT="FK to user table" />
+			</FIELDS>
+			<KEYS>
+				<KEY NAME="primary" TYPE="primary" FIELDS="id" />
+				<KEY NAME="questionidfk" TYPE="foreign" FIELDS="questionid" REFTABLE="question" REFFIELDS="id" COMMENT="fk to question table" />
+				<KEY NAME="useridfk" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id" COMMENT="fk to user table" />
+			</KEYS>
+		</TABLE>
+		<TABLE NAME="qtype_bfq_grades" COMMENT="Contains calculated grades info">
+			<FIELDS>
+				<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+				<FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="FK to question table" />
+				<FIELD NAME="scale" TYPE="int" LENGTH="1" NOTNULL="true" SEQUENCE="false" COMMENT="The scale of big five question." />
+				<FIELD NAME="amount" TYPE="int" LENGTH="3" NOTNULL="true" SEQUENCE="false" COMMENT="The amount of points by big five question." />
+				<FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"  COMMENT="FK to user table" />
+			</FIELDS>
+			<KEYS>
+				<KEY NAME="primary" TYPE="primary" FIELDS="id" />
+				<KEY NAME="questionidfk" TYPE="foreign" FIELDS="questionid" REFTABLE="question" REFFIELDS="id" COMMENT="fk to question table" />
+				<KEY NAME="useridfk" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id" COMMENT="fk to user table" />
+			</KEYS>
+		</TABLE>
+	</TABLES>
+</XMLDB>

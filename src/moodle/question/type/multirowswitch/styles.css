@@ -1,0 +1,26 @@
+/**  The multirowswitch question rendering table */
+
+.que.multirowswitch table.generaltable th:first-child, .que.multirowswitch table.generaltable td:first-child {
+    width: 48px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.que.multirowswitch table.generaltable td.select-row-switch-response-button {
+    text-align: center;
+}
+
+.que.multirowswitch table.generaltable th.header {
+    text-align: center;
+}
+
+.que.multirowswitch table.generaltable td.question-row-text.cell.c1 {
+    text-align: justify;
+}
+
+/* ====================================*/
+/** The question editing form */
+/* ====================================*/
+#question-rows-block.without-weight .option_answer {
+    display: none;
+}

@@ -24,3 +24,7 @@
 #question-rows-block.without-weight .option_answer {
     display: none;
 }
+
+body#page-question-type-multirowswitch .mform .form-inline br + label {
+    width: 90%;
+}

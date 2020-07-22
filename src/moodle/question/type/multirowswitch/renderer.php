@@ -92,7 +92,8 @@ class qtype_multirowswitch_renderer extends qtype_renderer
                 if (array_key_exists($field, $response) && ($response[$field] == $column->number)) {
                     $ischecked = true;
                 }
-                $radio = $this->radiobutton($buttonname, $column->number, $ischecked, $isReadonly);
+                $radio = $question->scoringmethod === 'leary' ? $this->checkbox($buttonname, $column->number, $ischecked, $isReadonly)
+                    : $this->radiobutton($buttonname, $column->number, $ischecked, $isReadonly);
 
                 // Show correctness icon with radio button if needed.
                 if ($displayoptions->correctness && MultiRowSwitchHelper::getInstance()->useWeight($question->scoringmethod)) {
@@ -158,5 +159,13 @@ class qtype_multirowswitch_renderer extends qtype_renderer
 
         return '<label><input type="radio" name="' . $name . '" value="' . $value . '" ' . $checked . ' ' .
                $readonly . '/></label>';
+    }
+
+    protected static function checkbox($name, $value, $checked, $readonly)
+    {
+        $readonly = $readonly ? ' disabled="disabled"' : '';
+        $checked = $checked ? ' checked="checked"' : '';
+
+        return '<label><input type="checkbox" value="' . $value . '" name="' . $name . '"' . $checked . $readonly . '></label>';
     }
 }

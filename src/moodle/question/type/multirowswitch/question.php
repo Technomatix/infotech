@@ -176,6 +176,9 @@ class qtype_multirowswitch_question extends question_graded_automatically_with_c
      */
     public function is_complete_response(array $response)
     {
+        if($this->scoringmethod === 'leary'){
+            return count($response)? 1 : 0;
+        }
         return (count($response) === count($this->rows));
     }
 

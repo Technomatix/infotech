@@ -8,7 +8,7 @@ class MultiRowSwitchHelper
 {
     private static $instance;
 
-    public static $methodWithoutWeight = ['ito', 'shmisheka'];
+    public static $methodWithoutWeight = ['ito', 'shmisheka', 'leary'];
 
     public static function getInstance()
     {
@@ -24,6 +24,7 @@ class MultiRowSwitchHelper
         return [
             'shmisheka' => 88,
             'ito' => 91,
+            'leary' => 128,
         ];
     }
 
@@ -954,6 +955,648 @@ class MultiRowSwitchHelper
                 [
                     'number' => 88,
                     'text' => 'Чи змогли б Ви так увійти в роль, щоб забути про те, що це тільки гра?',
+                    'checked' => true,
+                ],
+            ],
+            'leary' => [
+                [
+                    'number' => 1,
+                    'text' => 'Інші прихильно думають про нього.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 2,
+                    'text' => 'Справляє враження на оточуючих.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 3,
+                    'text' => 'Вміє розпоряджатися і наказувати.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 4,
+                    'text' => 'Вміє наполягти на своєму.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 5,
+                    'text' => 'Має почуття власної гідності.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 6,
+                    'text' => 'Незалежний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 7,
+                    'text' => 'Може сам про себе подбати.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 8,
+                    'text' => 'Може проявляти байдужість.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 9,
+                    'text' => 'Може бути суворим.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 10,
+                    'text' => 'Строгий, однак справедливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 11,
+                    'text' => 'Може бути щирим.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 12,
+                    'text' => 'Критичний до інших.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 13,
+                    'text' => 'Любить жалітися.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 14,
+                    'text' => 'Часто засмучений.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 15,
+                    'text' => 'Може проявляти недовіру.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 16,
+                    'text' => 'Часто розчаровується.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 17,
+                    'text' => 'Критичний до себе.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 18,
+                    'text' => 'Може визнати свою неправоту.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 19,
+                    'text' => 'Охоче підкорюється.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 20,
+                    'text' => 'Поступливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 21,
+                    'text' => 'Вдячний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 22,
+                    'text' => 'Схильний до захоплення і наслідування.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 23,
+                    'text' => 'Шанобливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 24,
+                    'text' => 'Прагне схвалення.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 25,
+                    'text' => 'Схильний до співробітництва, взаємодопомоги.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 26,
+                    'text' => 'Прагне уживатися з іншими.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 27,
+                    'text' => 'Товариський і доброзичливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 28,
+                    'text' => 'Уважний і ласкавий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 29,
+                    'text' => 'Делікатний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 30,
+                    'text' => 'Підбадьорюючий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 31,
+                    'text' => 'Прийде на допомогу.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 32,
+                    'text' => 'Безкорисливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 33,
+                    'text' => 'Викликає захоплення.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 34,
+                    'text' => 'Користується повагою.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 35,
+                    'text' => 'Має талант керівника.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 36,
+                    'text' => 'Любить відповідальність.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 37,
+                    'text' => 'Впевнений у собі.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 38,
+                    'text' => 'Самовпевнений і наполегливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 39,
+                    'text' => 'Діловий і практичний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 40,
+                    'text' => 'Любить змагатися.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 41,
+                    'text' => 'Стійкий і «крутий», коли потрібно.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 42,
+                    'text' => 'Невблаганний, однак безпристрасний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 43,
+                    'text' => 'Дратівливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 44,
+                    'text' => 'Відкритий і прямолінійний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 45,
+                    'text' => 'Не терпить, щоб ним командували.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 46,
+                    'text' => 'Скептичний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 47,
+                    'text' => 'На нього важко справити враження.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 48,
+                    'text' => 'Образливий і чутливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 49,
+                    'text' => 'Легко ніяковіє.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 50,
+                    'text' => 'Невпевнений у собі.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 51,
+                    'text' => 'Поступливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 52,
+                    'text' => 'Скромний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 53,
+                    'text' => 'Часто потребує допомоги з боку інших.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 54,
+                    'text' => 'Шанує авторитети.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 55,
+                    'text' => 'Охоче приймає поради.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 56,
+                    'text' => 'Довірливий і прагне тішити інших.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 57,
+                    'text' => 'Люб’язний у поводженні.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 58,
+                    'text' => 'Цінує думку оточуючих.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 59,
+                    'text' => 'Комунікабельний і поступливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 60,
+                    'text' => 'Добросердечний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 61,
+                    'text' => 'Добрий, додає впевненості.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 62,
+                    'text' => 'Ніжний і м’якосердий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 63,
+                    'text' => 'Піклується про інших.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 64,
+                    'text' => 'Безкорисливий і щедрий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 65,
+                    'text' => 'Любить давати поради.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 66,
+                    'text' => 'Справляє враження значущості.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 67,
+                    'text' => 'Розпорядчо-наказовий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 68,
+                    'text' => 'Владний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 69,
+                    'text' => 'Хвалько.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 70,
+                    'text' => 'Зверхній і самовдоволений.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 71,
+                    'text' => 'Думає лише про себе.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 72,
+                    'text' => 'Хитрий і меркантильний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 73,
+                    'text' => 'Нетерпимий до помилок інших.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 74,
+                    'text' => 'Своєкорисливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 75,
+                    'text' => 'Відвертий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 76,
+                    'text' => 'Недоброзичливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 77,
+                    'text' => 'Озлоблений.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 78,
+                    'text' => 'Любить скаржитися.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 79,
+                    'text' => 'Ревнивий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 80,
+                    'text' => 'Довго пам’ятає образи.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 81,
+                    'text' => 'Схильний до самозвинувачень.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 82,
+                    'text' => 'Сором’язливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 83,
+                    'text' => 'Безініціативний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 84,
+                    'text' => 'Покірливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 85,
+                    'text' => 'Залежний і несамостійний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 86,
+                    'text' => 'Любить підкорятися.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 87,
+                    'text' => 'Надає іншим право приймати рішення.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 88,
+                    'text' => 'Легко потрапляє в халепу.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 89,
+                    'text' => 'Легко підпадає під вплив.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 90,
+                    'text' => 'Готовий довіритися будь-кому.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 91,
+                    'text' => 'Дружній до всіх без винятку.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 92,
+                    'text' => 'Усім симпатизує.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 93,
+                    'text' => 'Все прощає.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 94,
+                    'text' => 'Надмірно співчутливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 95,
+                    'text' => 'Великодушний і терпимий до недоліків.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 96,
+                    'text' => 'Прагне бути покровителем.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 97,
+                    'text' => 'Прагне успіху.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 98,
+                    'text' => 'Очікує захоплення від кожного.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 99,
+                    'text' => 'Розпоряджається іншими.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 100,
+                    'text' => 'Деспотичний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 101,
+                    'text' => 'Сноб (судить про людей за їх рангом і достатком, а не за особистими якостями).',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 102,
+                    'text' => 'Марнославний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 103,
+                    'text' => 'Егоїстичний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 104,
+                    'text' => 'Холодний і черствий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 105,
+                    'text' => 'Саркастичний і глузливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 106,
+                    'text' => 'Злий і жорстокий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 107,
+                    'text' => 'Часто гнівливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 108,
+                    'text' => 'Байдужий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 109,
+                    'text' => 'Злопам’ятний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 110,
+                    'text' => 'Суперечливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 111,
+                    'text' => 'Впертий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 112,
+                    'text' => 'Недовірливий і підозрілий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 113,
+                    'text' => 'Боязкий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 114,
+                    'text' => 'Сором’язливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 115,
+                    'text' => 'Надмірно готовий підкорятися.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 116,
+                    'text' => 'М’якотілий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 117,
+                    'text' => 'Майже ніколи і нікому не заперечує.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 118,
+                    'text' => 'Ненав’язливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 119,
+                    'text' => 'Любить опіку.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 120,
+                    'text' => 'Дуже довірливий.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 121,
+                    'text' => 'Прагне знайти прихильність кожного.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 122,
+                    'text' => 'З усіма погоджується.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 123,
+                    'text' => 'Завжди дружелюбний.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 124,
+                    'text' => 'Всіх любить.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 125,
+                    'text' => 'Дуже поблажливий до оточуючих.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 126,
+                    'text' => 'Прагне втішити кожного.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 127,
+                    'text' => 'Турбується про всіх на шкоду собі.',
+                    'checked' => true,
+                ],
+                [
+                    'number' => 128,
+                    'text' => 'Псує людей надмірною добротою.',
                     'checked' => true,
                 ],
             ],

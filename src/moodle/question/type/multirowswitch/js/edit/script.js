@@ -15,6 +15,14 @@ M.question_edit = {
     }
 
     document.querySelector('input[name=numberofrows]').value = methodDataRows.length
+
+    if(methodName === 'leary'){
+      document.querySelector('input[name=responsetext_2]').parentElement.parentElement.setAttribute('style', 'display: none;')
+      document.querySelector('input[name=numberofcolumns]').value = 1
+    }else{
+      document.querySelector('input[name=responsetext_2]').parentElement.parentElement.removeAttribute('style')
+      document.querySelector('input[name=numberofcolumns]').value = 2
+    }
   },
   template: function (number, rowObject, weightButtons) {
     var checked1 = rowObject.checked * 1 === 1 ? ' checked="checked"' : ''

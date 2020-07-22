@@ -51,7 +51,7 @@ abstract class qtype_multirowswitch_grading
      * @return float|int
      * @see qtype_multirowswitch_grading::grade_question()
      */
-    public function grade_question($question, $answers)
+    public function grade_question(qtype_multirowswitch_question $question, $answers)
     {
         $correctRows = 0;
         foreach ($question->order as $key => $rowid) {

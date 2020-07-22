@@ -205,6 +205,7 @@ class qtype_multirowswitch_edit_form extends question_edit_form
             $scoringbuttons = [];
             $scoringbuttons[] = &$mform->createElement('radio', 'scoringmethod', '', get_string('ito', 'qtype_multirowswitch'), 'ito');
             $scoringbuttons[] = &$mform->createElement('radio', 'scoringmethod', '', get_string('shmisheka', 'qtype_multirowswitch'), 'shmisheka');
+            $scoringbuttons[] = &$mform->createElement('radio', 'scoringmethod', '', get_string('leary', 'qtype_multirowswitch'), 'leary');
             $mform->addGroup($scoringbuttons, 'radiogroupscoring', get_string('scoringmethod', 'qtype_multirowswitch'), [' <br/> '], false);
             $mform->addHelpButton('radiogroupscoring', 'scoringmethod', 'qtype_multirowswitch');
             $mform->setDefault('scoringmethod', 'ito');
@@ -243,7 +244,7 @@ class qtype_multirowswitch_edit_form extends question_edit_form
             $responsetexts[] = get_string('responsetext2', 'qtype_multirowswitch');
         }
 
-        $questionRowsBlockClass = (in_array($scoringMethod, ['shmisheka', 'ito'])) ? ' class="without-weight"' : '';
+        $questionRowsBlockClass = (!MultiRowSwitchHelper::getInstance()->useWeight($scoringMethod)) ? ' class="without-weight"' : '';
         $mform->addElement('html', '<div id="question-rows-block"' . $questionRowsBlockClass . '>');
 
         // Add an option text editor, response radio buttons and a feedback editor for each option.

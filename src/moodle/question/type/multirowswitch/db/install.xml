@@ -94,5 +94,19 @@
 				<KEY NAME="useridfk" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id" COMMENT="fk to user table" />
 			</KEYS>
 		</TABLE>
+		<TABLE NAME="qtype_leary_grades" COMMENT="Contains calculated grades info">
+			<FIELDS>
+				<FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+				<FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="FK to question table" />
+				<FIELD NAME="scale" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="The scale name." />
+				<FIELD NAME="amount" TYPE="int" LENGTH="3" NOTNULL="true" SEQUENCE="false" COMMENT="The amount of points by leary question." />
+				<FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"  COMMENT="FK to user table" />
+			</FIELDS>
+			<KEYS>
+				<KEY NAME="primary" TYPE="primary" FIELDS="id" />
+				<KEY NAME="questionidfk" TYPE="foreign" FIELDS="questionid" REFTABLE="question" REFFIELDS="id" COMMENT="fk to question table" />
+				<KEY NAME="useridfk" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id" COMMENT="fk to user table" />
+			</KEYS>
+		</TABLE>
 	</TABLES>
 </XMLDB>

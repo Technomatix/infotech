@@ -19,7 +19,8 @@ class qtype_multirowswitch_grading_shmisheka extends qtype_multirowswitch_gradin
         $selectedRows = [];
         foreach ($question->order as $key => $rowid) {
             $row = $question->rows[$rowid];
-            $field = $question->field($row->number);
+            $keyValue = $row->number > 0 ? $row->number -1 : 0;
+            $field = $question->field($keyValue);
             if (isset($response[$field]) && in_array((int)$response[$field], [self::RESPONSE_ANSWERED_TRUE_VALUE, self::RESPONSE_ANSWERED_FALSE_VALUE])) {
                 $selectedRows[$row->number . ''] = $response[$field] * 1;
             }

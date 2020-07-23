@@ -1,0 +1,31 @@
+/**  The memorize question rendering table */
+
+.que.memorize table.generaltable th:first-child, .que.memorize table.generaltable td:first-child {
+    width: 48px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.que.memorize table.generaltable td.select-row-switch-response-button {
+    text-align: center;
+}
+
+.que.memorize table.generaltable th.header {
+    text-align: center;
+}
+
+.que.memorize table.generaltable .option_answer {
+    display: none;
+}
+
+.que.memorize table.generaltable td.question-row-text.cell.c1 {
+    text-align: center;
+}
+
+/* ====================================*/
+/** The question editing form */
+/* ====================================*/
+
+body#page-question-type-memorize .mform .form-inline br + label {
+    width: 90%;
+}

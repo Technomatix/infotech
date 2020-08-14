@@ -45,13 +45,25 @@ class qtype_richiemartin extends question_type
             $question->options = new stdClass();
         }
         if (!isset($question->options->numberofrows)) {
-            $question->options->numberofrows = count($question->options->rows);
+            $question->options->numberofrows = count($this->getQuestionRows());
         }
         if (!isset($question->options->numberofcolumns)) {
             $question->options->numberofcolumns = QTYPE_RICHIEMARTIN_NUMBER_OF_RESPONSES;
         }
         if (!isset($question->options->shuffleanswers)) {
             $question->options->shuffleanswers = $richiemartinconfig->shuffleanswers;
+        }
+
+        if (!isset($question->options->rows)) {
+            $rows = [];
+            for ($i = 1; $i <= $question->options->numberofrows; ++$i) {
+                $row = new stdClass();
+                $row->number = $i;
+                $row->optiontext = '';
+                $row->optionitems = [];
+                $rows[] = $row;
+            }
+            $question->options->rows = $rows;
         }
 
         if (!isset($question->options->columns)) {

@@ -80,8 +80,8 @@ class qtype_richiemartin_renderer extends qtype_renderer
                     )
                 );
 
-                $tableRow[] = new html_table_cell($row->optionitems[$itemKey]);
-                $field = $question->fieldItem($key, $itemKey);
+                $tableRow[] = new html_table_cell($row->optionitems[$column->number]);
+                $field = $question->fieldItem($key, $column->number);
                 $buttonname = $qa->get_field_prefix() . $field;
                 $columnVariantValue = 0;
                 if (array_key_exists($field, $response) && !empty($response[$field])) {

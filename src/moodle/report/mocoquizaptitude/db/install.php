@@ -25,14 +25,14 @@ function xmldb_report_mocoquizaptitude_install()
             $capabilities = ['report/mocoquizaptitude:view'];
             $context = context::instance_by_id(1);
             foreach ($capabilities as $capability) {
-                setCapabilityMococoursecompletion($capability, '1', $role->id, $context, true);
+                setCapabilityMocoquizaptitude($capability, '1', $role->id, $context, true);
                 $context->mark_dirty();
             }
         }
     }
 }
 
-function setCapabilityMococoursecompletion($capability, $permission, $roleid, $contextid, $overwrite = false)
+function setCapabilityMocoquizaptitude($capability, $permission, $roleid, $contextid, $overwrite = false)
 {
     global $USER, $DB;
 

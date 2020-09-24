@@ -7,3 +7,5 @@ $string['head1'] = 'Parameters for evaluation';
 $string['head2'] = 'Research Methods';
 $string['head3'] = 'Rating Scales';
 $string['head4'] = 'Police profession';
+
+$string['recommendation_title'] = 'Guidelines for Basic Policing';

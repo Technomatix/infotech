@@ -94,6 +94,7 @@ class report_mocoquizaptitude_plugin
 
         $this->page->requires->js_call_amd('report_mocoquizaptitude/mocoquizaptitude', 'init', [current_language()]);
         $this->page->requires->css(new moodle_url($this->cfg->wwwroot . '/local/moco_report_filters/styles.css'));
+        $this->page->requires->css(new moodle_url($this->cfg->wwwroot . '/report/mocoquizaptitude/css/styles.css'));
     }
 
     public function renderFilters()
@@ -128,6 +129,7 @@ class report_mocoquizaptitude_plugin
         }
 
         $helper->showTable($data);
+        $helper->showRecommendationTable($data);
     }
 
     /**

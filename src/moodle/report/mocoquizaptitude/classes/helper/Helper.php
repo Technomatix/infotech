@@ -192,11 +192,60 @@ class Helper
     }
 
     /**
-     * @param UserCollection $data
+     * @param array $data
      *
      * @return string
      */
     protected function getHtmlTbodyRecommendation($data)
+    {
+        $tbody = [];
+        $tbody[] = html_writer::start_tag('tbody');
+        foreach($data as $profession => $value) {
+            $tbody[] = html_writer::start_tag('tr');
+            $tbody[] = html_writer::start_tag('td', ['class' => 'text-center', 'style' => 'width:70%']);
+            $tbody[] = $profession;
+            $tbody[] = html_writer::end_tag('td');
+            $tbody[] = html_writer::start_tag('td', ['class' => 'text-center']);
+            $tbody[] = $value . ' %';
+            $tbody[] = html_writer::end_tag('td');
+            $tbody[] = html_writer::end_tag('tr');
+        }
+
+
+        $tbody[] = html_writer::end_tag('tbody');
+
+        return implode("", $tbody);
+    }
+
+    public function showRecommendationTables($data)
+    {
+        $data = $this->prepareRecommendationData($data);
+
+        $table = [];
+
+        $table[] = html_writer::start_div('panel panel-default panel-row');
+        $table[] = html_writer::tag('h2', get_string('recommendation_suitable_title', 'report_mocoquizaptitude'), ['class' => 'text-center']);
+        $table[] = html_writer::start_tag('table', ['class' => 'items table table-normal table-hover reportTable', 'id' => 'mocoquizaptituderecommendation']);
+        $table[] = $this->getHtmlTbodyRecommendation($data['suitable']);
+        $table[] = html_writer::end_tag('table');
+        $table[] = html_writer::end_div();
+
+        $table[] = html_writer::start_div('panel panel-default panel-row');
+        $table[] = html_writer::tag('h2', get_string('recommendation_title', 'report_mocoquizaptitude'));
+        $table[] = html_writer::start_tag('table', ['class' => 'items table table-normal table-hover reportTable', 'id' => 'mocoquizaptituderecommendation']);
+        $table[] = $this->getHtmlTbodyRecommendation($data['profession']);
+        $table[] = html_writer::end_tag('table');
+        $table[] = html_writer::end_div();
+
+        echo implode("", $table);
+    }
+
+    /**
+     * @param UserCollection $data
+     *
+     * @return array
+     */
+    protected function prepareRecommendationData($data)
     {
         $policeProfessions = [
             Structure::INQUIRER,
@@ -209,14 +258,24 @@ class Helper
 
         $ProfessionsResult = [];
         $allCnt = 0;
+        $valid = 0;
+        $invalid = 0;
 
-        $tbody = [];
-        $tbody[] = html_writer::start_tag('tbody');
         foreach ($data->getAll() as $item) {
             /** @var Questionnaire $questionnaire */
             foreach ($item->questionnaires->getAll() as $questionnaire) {
                 /** @var AcquiredProfession $profession */
                 foreach ($questionnaire->professions->getAll() as $profession) {
+                    if($profession->value === Structure::UNSUITABLE){
+                        $invalid ++;
+                        continue;
+                    }
+
+                    $valid ++;
+                    if($profession->value === Structure::SUITABLE){
+                        continue;
+                    }
+
                     if(!isset($ProfessionsResult[$profession->value])){
                         $ProfessionsResult[$profession->value] = 0;
                     }
@@ -240,39 +299,21 @@ class Helper
         }
 
         foreach($policeProfessions as $profession) {
-            if (!isset($result[$profession])) {
+            if (!in_array($profession, [Structure::SUITABLE, Structure::UNSUITABLE]) && !isset($result[$profession])) {
                 $result[$profession] = 0;
             }
         }
-        foreach($result as $profession => $value) {
-            $value = number_format($value * $onePercentValue, 2, '.', '');
 
-            $tbody[] = html_writer::start_tag('tr');
-            $tbody[] = html_writer::start_tag('td', ['class' => 'text-center']);
-            $tbody[] = $profession;
-            $tbody[] = html_writer::end_tag('td');
-            $tbody[] = html_writer::start_tag('td', ['class' => 'text-center']);
-            $tbody[] = $value . ' %';
-            $tbody[] = html_writer::end_tag('td');
-            $tbody[] = html_writer::end_tag('tr');
+        $professionsResult = [];
+        foreach($result as $profession => $value) {
+            $professionsResult[$profession] = number_format($value * $onePercentValue, 2, '.', '');
         }
 
+        $suitableResult = [];
+        $suitablePercentValue = 100 / ($valid + $invalid);
+        $suitableResult[Structure::SUITABLE] = number_format($valid * $suitablePercentValue, 2, '.', '');
+        $suitableResult[Structure::UNSUITABLE] = number_format($invalid * $suitablePercentValue, 2, '.', '');
 
-        $tbody[] = html_writer::end_tag('tbody');
-
-        return implode("", $tbody);
-    }
-
-    public function showRecommendationTable($data)
-    {
-        $table = [];
-        $table[] = html_writer::start_div('panel panel-default panel-row');
-        $table[] = html_writer::tag('h2', get_string('recommendation_title', 'report_mocoquizaptitude'));
-        $table[] = html_writer::start_tag('table', ['class' => 'items table table-normal table-hover reportTable', 'id' => 'mocoquizaptituderecommendation']);
-        $table[] = $this->getHtmlTbodyRecommendation($data);
-        $table[] = html_writer::end_tag('table');
-        $table[] = html_writer::end_div();
-
-        echo implode("", $table);
+        return ['suitable' => $suitableResult, 'profession' => $professionsResult];
     }
 }

@@ -129,7 +129,7 @@ class report_mocoquizaptitude_plugin
         }
 
         $helper->showTable($data);
-        $helper->showRecommendationTable($data);
+        $helper->showRecommendationTables($data);
     }
 
     /**
